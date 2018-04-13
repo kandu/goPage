@@ -18,8 +18,8 @@
 
 進入 goPage 源碼目錄
 
-  qmake
-  make
+    qmake
+    make
 
 即可在 src 目錄下得到 goPage 程序。
 
