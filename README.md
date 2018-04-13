@@ -23,4 +23,4 @@
 
 即可在 src 目錄下得到 goPage 程序。
 
-![演示](https://bitbucket.org/zandoye/static/src/ff7891d5ce569b25042dc397e6fe9e80efe953dd/goPage/goPage.gif)
+![演示](https://bytebucket.org/zandoye/static/raw/ff7891d5ce569b25042dc397e6fe9e80efe953dd/goPage/goPage.gif)
