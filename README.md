@@ -1,6 +1,6 @@
 # goPage
 
-引得市，開卷助理 linux 版。
+引得市，開卷助理 *NIX 版。
 
 # 使用說明
 
@@ -8,7 +8,7 @@
 
 # 與 Windows 版本的不同處
 
-1. goPage4linux 根據 freedesktop 標準，通過 xdg 工具組自動尋找默認 pdf 閱讀器。當前支持 Gnome 桌面下的默認閱讀器 evince, KDE 桌面下的默認閱讀器 okular, 以及通用閱讀器 xpdf。用戶可根據需要自己在 pdfViewer.cfg 配置文件中添加自定義閱讀器。
+1. goPage *NIX 根據 freedesktop 標準，通過 xdg 工具組自動尋找默認 pdf 閱讀器。當前支持 Gnome 桌面下的默認閱讀器 evince, KDE 桌面下的默認閱讀器 okular, 以及通用閱讀器 xpdf。用戶可根據需要自己在 pdfViewer.cfg 配置文件中添加自定義閱讀器。
 
 2. rmp 文件內部設定文件名時，應遵照 \*INX 習慣，不省略後綴名(.pdf)
 
