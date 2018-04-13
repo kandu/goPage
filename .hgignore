@@ -1,0 +1,17 @@
+syntax: glob
+
+**/.\#*
+**/*~
+**/Session.vim
+**/.*.swp
+
+**/*.o
+**/*.a
+**/*.so
+
+src/goPage
+
+Makefile
+moc_*.cpp
+compile_commands.json
+.clang_complete
