@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>goPage</class>
+ <widget class="QMainWindow" name="goPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>goPage</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <column>
+       <property name="text">
+        <string>name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>offset</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>path</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMinimize_to_tray">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionTray"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuImport">
+    <property name="title">
+     <string>&amp;Import</string>
+    </property>
+    <addaction name="actionDict"/>
+    <addaction name="actionRmp"/>
+   </widget>
+   <widget class="QMenu" name="menuMigrate">
+    <property name="title">
+     <string>&amp;Migrate</string>
+    </property>
+    <addaction name="actionFrom"/>
+    <addaction name="action_All"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>&amp;About</string>
+    </property>
+   </widget>
+   <addaction name="menuMinimize_to_tray"/>
+   <addaction name="menuImport"/>
+   <addaction name="menuMigrate"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionQuit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+  </action>
+  <action name="actionTray">
+   <property name="text">
+    <string>&amp;Tray</string>
+   </property>
+  </action>
+  <action name="actionDict">
+   <property name="text">
+    <string>&amp;Dict</string>
+   </property>
+  </action>
+  <action name="actionRmp">
+   <property name="text">
+    <string>&amp;Rmp</string>
+   </property>
+  </action>
+  <action name="actionFrom">
+   <property name="text">
+    <string>&amp;From</string>
+   </property>
+  </action>
+  <action name="action_All">
+   <property name="text">
+    <string>&amp;All</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="res/goPage.qrc"/>
+ </resources>
+ <connections/>
+</ui>

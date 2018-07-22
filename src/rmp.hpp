@@ -1,6 +1,7 @@
 #ifndef _RMP_H
 #define _RMP_H
 
+#include "config.h"
 #include <QObject>
 #include <QApplication>
 #include <QClipboard>
@@ -14,6 +15,7 @@ class Rmp: public QObject {
     Q_OBJECT
     public:
         Rmp(QString book, QObject* parent= 0);
+        Rmp& fromFile();
         bool exist();
         int offset();
         QString path();

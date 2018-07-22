@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="images">
+    <file>goPage.png</file>
+  </qresource>
+  <qresource prefix="translations">
+    <file>zh_CN.qm</file>
+    <file>zh_TW.qm</file>
+  </qresource>
+</RCC>

@@ -9,7 +9,6 @@
 Manager::Manager(QObject* parent)
     : QObject(parent)
 {
-    pdfViewer= new PdfViewer(this);
     monitor= new Monitor(QApplication::clipboard(), this);
     connect(
         monitor,
@@ -20,7 +19,6 @@ Manager::Manager(QObject* parent)
 }
 
 void Manager::query(QString book, int page) {
-    qDebug() << book << page;
     Rmp* rmp;
     auto rmp_i= rmps.find(book);
     if (rmp_i != rmps.end()) {
@@ -31,19 +29,13 @@ void Manager::query(QString book, int page) {
     }
 
     if (QFile(rmp->path()).exists()) {
-        QProcess pdf;
-        QString app= pdfViewer->app();
-        QStringList arg= QStringList()
-            << rmp->path()
-            << pdfViewer->opt_page ()
-            << QString::number(page + rmp->offset());
-
-        pdf.startDetached(app, arg);
+        Invoker invoker(this);
+        invoker.open(rmp->path(), QString::number(page + rmp->offset()));
     } else {
         QMessageBox(
             QMessageBox::Warning,
-            "錯誤",
-            "無法找到詞典文件：" + rmp->path()
+            QObject::tr("error"),
+            QObject::tr("dict doesn't exist: ") + rmp->path()
         ).exec();
     }
 }

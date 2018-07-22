@@ -1,6 +1,7 @@
 #ifndef _MONITOR_H
 #define _MONITOR_H
 
+#include "config.h"
 #include <QObject>
 #include <QClipboard>
 
