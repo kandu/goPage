@@ -4,14 +4,10 @@ syntax: glob
 **/*~
 **/Session.vim
 **/.*.swp
+**/*.qm
 
-**/*.o
-**/*.a
-**/*.so
-
-src/goPage
+src/build
 
 Makefile
-moc_*.cpp
 compile_commands.json
 .clang_complete

@@ -1,12 +1,13 @@
 #ifndef _MANAGER_H
 #define _MANAGER_H
 
+#include "config.h"
 #include <QObject>
 #include <QApplication>
 #include <QMap>
 #include "rmp.hpp"
 #include "monitor.hpp"
-#include "pdfViewer.hpp"
+#include "invoker.hpp"
 
 #ifdef _MANAGER
     #undef EXTERN
@@ -18,7 +19,6 @@ class Manager: public QObject {
     public:
         Manager(QObject* parent= 0);
     private:
-        PdfViewer* pdfViewer;
         Monitor* monitor;
         QMap<QString, Rmp*> rmps;
     private slots:
