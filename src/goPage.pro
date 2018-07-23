@@ -5,6 +5,8 @@ INCLUDEPATH += .
 
 DESTDIR= build
 
+system(lupdate goPage.pro && lrelease goPage.pro)
+
 QMAKE_CXXFLAGS += -std=c++11
 
 isEmpty(PREFIX) {
