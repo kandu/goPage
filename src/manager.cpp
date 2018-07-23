@@ -2,6 +2,7 @@
 
 #include <QRegExp>
 #include <QFile>
+#include <QDir>
 #include <QMessageBox>
 #include <QDebug>
 #include "manager.hpp"
@@ -16,6 +17,10 @@ Manager::Manager(QObject* parent)
         this,
         SLOT(query(QString, int))
         );
+    QDir rmpDir(QDir::homePath() + USERCONFDIR + "/rmp");
+    rmpDir.setNameFilters(QStringList() << "*.rmp");
+    rmpDir.setFilter(QDir::Files);
+    qDebug() << rmpDir.entryList();
 }
 
 void Manager::query(QString book, int page) {
@@ -28,14 +33,14 @@ void Manager::query(QString book, int page) {
         rmps.insert(book, rmp);
     }
 
-    if (QFile(rmp->path()).exists()) {
+    if (rmp->ifExist()) {
         Invoker invoker(this);
-        invoker.open(rmp->path(), QString::number(page + rmp->offset()));
+        invoker.open(rmp->getPath(), QString::number(page + rmp->getOffset()));
     } else {
         QMessageBox(
             QMessageBox::Warning,
             QObject::tr("error"),
-            QObject::tr("dict doesn't exist: ") + rmp->path()
+            QObject::tr("dict doesn't exist: ") + rmp->getPath()
         ).exec();
     }
 }

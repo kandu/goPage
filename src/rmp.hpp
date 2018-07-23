@@ -12,18 +12,32 @@
 #endif
 
 class Rmp: public QObject {
+    enum State { ok, notExist, formatErr };
+
     Q_OBJECT
     public:
-        Rmp(QString book, QObject* parent= 0);
-        Rmp& fromFile();
-        bool exist();
-        int offset();
-        QString path();
+        Rmp(QString const & book, QObject* parent= 0);
+
+        State load(QString const & path);
+        bool save(QString const & path);
+
+        bool ifExist();
+        void setExist(bool exist);
+
+        int getOffset();
+        void setOffset(int offset);
+
+        QString const & getPath();
+        void setPath(QString const & path);
+
+        State getState();
+        void setState(State state);
     private:
+        State state;
         QString book;
-        bool _exist= false;
-        int _offset= 0;
-        QString _path= "";
+        bool exist= false;
+        int offset= 0;
+        QString path= "";
 };
 
 #undef EXTERN
