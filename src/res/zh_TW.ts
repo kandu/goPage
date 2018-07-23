@@ -7,7 +7,6 @@
         <location filename="../invoker.cpp" line="33"/>
         <location filename="../invoker.cpp" line="46"/>
         <location filename="../manager.cpp" line="37"/>
-        <location filename="../rmp.cpp" line="33"/>
         <source>error</source>
         <translation>錯誤</translation>
     </message>
@@ -27,9 +26,8 @@
         <translation>詞典不存在：</translation>
     </message>
     <message>
-        <location filename="../rmp.cpp" line="34"/>
         <source>.rmp format error.</source>
-        <translation>.rmp 格式錯誤。</translation>
+        <translation type="obsolete">.rmp 格式錯誤。</translation>
     </message>
     <message>
         <location filename="../mw.cpp" line="11"/>
