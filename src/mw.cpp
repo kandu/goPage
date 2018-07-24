@@ -4,6 +4,7 @@
 #include <QFileDialog>
 #include <QSpinBox>
 #include <QDebug>
+#include <limits>
 #include "mw.hpp"
 
 void setupTray(QWidget* mw, QMenu* menu, QSystemTrayIcon* trayIcon)
@@ -84,7 +85,7 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
     manager= new Manager(this);
     QObject::connect(
         manager,
-        SIGNAL(newRmp(Rmp const &)),
+        SIGNAL(rmpLoaded(Rmp const &)),
         this,
         SLOT(appendBook(Rmp const &))
         );
@@ -99,6 +100,9 @@ void Mw::appendBook(Rmp const & rmp) {
     qmlTable->insertRow(row);
 
     QSpinBox* offsetBox= new QSpinBox(qmlTable);
+    offsetBox->setRange(
+        std::numeric_limits<int>::min(),
+        std::numeric_limits<int>::max());
     offsetBox->setValue(rmp.getOffset());
     qmlTable->setCellWidget(row, 1, offsetBox);
 
