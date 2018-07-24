@@ -31,7 +31,7 @@ void Manager::loadRmps() {
         Rmp rmp(fi.baseName());
         if (rmp.load(rmpDir) == Rmp::ok) {
             rmps.insert(rmp.getName(), rmp);
-            emit newRmp(rmp);
+            emit rmpLoaded(rmp);
         }
     }
 }
