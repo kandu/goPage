@@ -22,6 +22,7 @@ class Mw: public QMainWindow {
         QMenu* trayMenu;
         Ui::goPage ui;
     public slots:
+        void appendBook(Rmp const & rmp);
         void importDict();
         void importRmp();
     private slots:

@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QApplication>
 #include <QMap>
+#include <QDir>
 #include "rmp.hpp"
 #include "monitor.hpp"
 #include "invoker.hpp"
@@ -18,9 +19,14 @@ class Manager: public QObject {
     Q_OBJECT
     public:
         Manager(QObject* parent= 0);
+        void loadRmps();
+        QMap<QString, Rmp> const & getRmps();
+    signals:
+        void newRmp(Rmp const &);
     private:
         Monitor* monitor;
-        QMap<QString, Rmp*> rmps;
+        QMap<QString, Rmp> rmps;
+        QDir rmpDir;
     private slots:
         void query(QString book, int page);
 };
