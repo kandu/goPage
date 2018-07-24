@@ -40,7 +40,7 @@ QMap<QString, Rmp> const & Manager::getRmps() {
     return rmps;
 }
 
-void Manager::query(QString book, int page) {
+void Manager::query(QString const & book, int page) {
     Rmp rmp(book);
     auto rmp_i= rmps.find(book);
     if (rmp_i != rmps.end()) {
@@ -61,3 +61,11 @@ void Manager::query(QString book, int page) {
     }
 }
 
+void Manager::remove(QString const & book) {
+    auto rmp_i= rmps.find(book);
+    if (rmp_i != rmps.end()) {
+        Rmp rmp= rmp_i.value();
+        rmps.remove(book);
+        QFile(rmpDir.filePath(book + ".rmp")).remove();
+    }
+}
