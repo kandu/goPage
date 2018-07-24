@@ -12,44 +12,49 @@
 
 QRegExp rmpFmt("^((\\+|-)?\\d+)?@(.*)");
 
-Rmp::Rmp(QString const & book, QObject* parent)
-    : QObject(parent)
+Rmp::Rmp(QString const & name)
 {
-    this->book= book;
+    this->name= name;
     return;
 }
 
-bool Rmp::ifExist() {
-    return exist;
-}
-void Rmp::setExist(bool exist) {
-    this->exist= exist;
+QString const & Rmp::getName() const {
+    return name;
 }
 
-int Rmp::getOffset() {
+bool Rmp::isRmpExist() {
+    return rmpExist;
+}
+
+bool Rmp::isDictExist() {
+    return QFile(path).exists();
+}
+
+int Rmp::getOffset() const {
     return offset;
 }
 void Rmp::setOffset(int offset) {
     this->offset= offset;
 }
 
-QString const & Rmp::getPath() {
+QString const & Rmp::getPath() const {
     return path;
 }
 void Rmp::setPath(QString const & path) {
     this->path= path;
 }
 
-Rmp::State Rmp::getState() {
+Rmp::State Rmp::getState() const {
     return state;
 }
 void Rmp::setState(State state) {
     this->state= state;
 }
 
-Rmp::State Rmp::load(QString const & rmpPath) {
-    QFile rmp(rmpPath);
+Rmp::State Rmp::load(QDir const & rmpDir) {
+    QFile rmp(rmpDir.filePath(name + ".rmp"));
     if (rmp.exists()) {
+        rmpExist= true;
         rmp.open(QIODevice::ReadOnly);
         auto cfg= QTextStream(&rmp).readLine();
         rmp.close();
@@ -67,8 +72,8 @@ Rmp::State Rmp::load(QString const & rmpPath) {
     return state;
 }
 
-bool Rmp::save(QString const & rmpPath) {
-    QFile rmp(rmpPath);
+bool Rmp::save(QDir const & rmpDir) {
+    QFile rmp(rmpDir.filePath(name + ".rmp"));
     if (rmp.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
         QString cfg= QString("%1@%2\n").arg(offset).arg(path);
         QTextStream rmpFile(&rmp);
@@ -79,5 +84,9 @@ bool Rmp::save(QString const & rmpPath) {
     } else {
         return false;
     }
+}
+
+void Rmp::del() {
+    QFile(path).remove();
 }
 
