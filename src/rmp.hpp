@@ -2,7 +2,7 @@
 #define _RMP_H
 
 #include "config.h"
-#include <QObject>
+#include <QDir>
 #include <QApplication>
 #include <QClipboard>
 
@@ -11,33 +11,39 @@
     #define EXTERN
 #endif
 
-class Rmp: public QObject {
-    enum State { ok, notExist, formatErr };
-
-    Q_OBJECT
+class Rmp {
     public:
-        Rmp(QString const & book, QObject* parent= 0);
+        enum State { ok, notExist, formatErr };
 
-        State load(QString const & path);
-        bool save(QString const & path);
+    public:
+        Rmp(QString const & name);
 
-        bool ifExist();
-        void setExist(bool exist);
+        QString const & getName() const;
 
-        int getOffset();
+        State load(QDir const & dir);
+        bool save(QDir const & dir);
+        void del();
+
+        bool isRmpExist();
+        bool isDictExist();
+
+        int getOffset() const;
         void setOffset(int offset);
 
-        QString const & getPath();
+        QString const & getPath() const;
         void setPath(QString const & path);
 
-        State getState();
+        State getState() const;
         void setState(State state);
     private:
         State state;
-        QString book;
-        bool exist= false;
+        QString name;
+        bool rmpExist= false;
+        bool dictExist= false;
+
+        // rmp cfg
         int offset= 0;
-        QString path= "";
+        QString path;
 };
 
 #undef EXTERN
