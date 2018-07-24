@@ -2,6 +2,7 @@
 
 #include <QMenu>
 #include <QFileDialog>
+#include <QSpinBox>
 #include <QDebug>
 #include "mw.hpp"
 
@@ -62,13 +63,13 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
         SLOT(quit()));
 
     connect(
-        ui.actionDict,
+        ui.actionImportDict,
         SIGNAL(triggered(bool)),
         this,
         SLOT(importDict()));
 
     connect(
-        ui.actionRmp,
+        ui.actionImportRmp,
         SIGNAL(triggered(bool)),
         this,
         SLOT(importRmp()));
@@ -77,9 +78,38 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
     trayMenu= new QMenu(this);
     setupTray(this, trayMenu, trayIcon);
 
+    QHeaderView* header= ui.tableWidget->horizontalHeader();
+    header->setStretchLastSection(true);
+
     manager= new Manager(this);
+    QObject::connect(
+        manager,
+        SIGNAL(newRmp(Rmp const &)),
+        this,
+        SLOT(appendBook(Rmp const &))
+        );
+    manager->loadRmps();
 
     return;
+}
+
+void Mw::appendBook(Rmp const & rmp) {
+    QTableWidget* qmlTable= ui.tableWidget;
+    int row= qmlTable->rowCount();
+    qmlTable->insertRow(row);
+
+    QSpinBox* offsetBox= new QSpinBox(qmlTable);
+    offsetBox->setValue(rmp.getOffset());
+    qmlTable->setCellWidget(row, 1, offsetBox);
+
+    auto nameItem= new QTableWidgetItem(rmp.getName());
+    nameItem->setFlags(nameItem->flags() ^ Qt::ItemIsEditable);
+    auto offsetItem= new QTableWidgetItem(rmp.getOffset());
+    auto pathItem= new QTableWidgetItem(rmp.getPath());
+
+    qmlTable->setItem(row, 0, nameItem);
+    qmlTable->setItem(row, 1, offsetItem);
+    qmlTable->setItem(row, 2, pathItem);
 }
 
 void Mw::importDict() {
