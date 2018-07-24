@@ -3,9 +3,40 @@
 #include <QMenu>
 #include <QFileDialog>
 #include <QSpinBox>
+#include <QKeyEvent>
 #include <QDebug>
 #include <limits>
 #include "mw.hpp"
+
+bool DelKeyFilter::eventFilter(QObject *obj, QEvent *event) {
+    if (event->type() == QEvent::KeyRelease) {
+        QKeyEvent* keyEvent = static_cast<QKeyEvent *>(event);
+        QTableWidget* tableWidget = static_cast<QTableWidget*>(obj);
+        if (keyEvent->key() == Qt::Key_Delete
+            && tableWidget->currentItem()->isSelected()
+            && tableWidget->currentColumn() == 0)
+        {
+            auto items= tableWidget->selectedItems();
+            QList<int> rows;
+
+            QListIterator<QTableWidgetItem*> i(items);
+            while (i.hasNext()) {
+                auto item= i.next();
+                if (item->column() == 0) {
+                    rows.append(item->row());
+                }
+            }
+
+            emit del(rows);
+            return true;
+        } else {
+            return QObject::eventFilter(obj, event);
+        }
+    } else {
+        return QObject::eventFilter(obj, event);
+    }
+}
+
 
 void setupTray(QWidget* mw, QMenu* menu, QSystemTrayIcon* trayIcon)
 {
@@ -75,6 +106,19 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
         this,
         SLOT(importRmp()));
 
+    connect(
+        ui.actionRemoveSelected,
+        SIGNAL(triggered(bool)),
+        this,
+        SLOT(removeSelected()));
+
+
+    connect(
+        &delKeyFilter,
+        SIGNAL(del(QList<int> const &)),
+        this,
+        SLOT(delRows(QList<int> const &)));
+
     trayIcon= new QSystemTrayIcon(this);
     trayMenu= new QMenu(this);
     setupTray(this, trayMenu, trayIcon);
@@ -91,7 +135,7 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
         );
     manager->loadRmps();
 
-    return;
+    ui.tableWidget->installEventFilter(&delKeyFilter);
 }
 
 void Mw::appendBook(Rmp const & rmp) {
@@ -116,6 +160,20 @@ void Mw::appendBook(Rmp const & rmp) {
     qmlTable->setItem(row, 2, pathItem);
 }
 
+void Mw::delRows(QList<int> const & _rows) {
+    // delete from bottom to top
+    auto rows= _rows;
+    qSort(rows.begin(), rows.end());
+
+    QListIterator<int> i(rows);
+    i.toBack();
+    while(i.hasPrevious()) {
+        int row= i.previous();
+        manager->remove(ui.tableWidget->item(row, 0)->text());
+        ui.tableWidget->removeRow(row);
+    }
+}
+
 void Mw::importDict() {
     QFileDialog fd(this);
     fd.setFileMode(QFileDialog::ExistingFiles);
@@ -128,11 +186,26 @@ void Mw::importDict() {
     if (fd.exec()) {
         fileNames = fd.selectedFiles();
         qDebug() << fileNames;
-    } 
+    }
 }
 
 void Mw::importRmp() {
     qDebug() << "importRmp";
+}
+
+void Mw::removeSelected() {
+    auto items= ui.tableWidget->selectedItems();
+    QList<int> rows;
+
+    QListIterator<QTableWidgetItem*> i(items);
+    while (i.hasNext()) {
+        auto item= i.next();
+        if (item->column() == 0) {
+            rows.append(item->row());
+        }
+    }
+
+    delRows(rows);
 }
 
 void Mw::trayActive(QSystemTrayIcon::ActivationReason reason) {

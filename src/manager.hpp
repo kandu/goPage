@@ -27,8 +27,9 @@ class Manager: public QObject {
         Monitor* monitor;
         QMap<QString, Rmp> rmps;
         QDir rmpDir;
-    private slots:
-        void query(QString book, int page);
+    public slots:
+        void remove(QString const & book);
+        void query(QString const & book, int page);
 };
 
 #undef EXTERN

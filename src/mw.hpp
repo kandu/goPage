@@ -12,6 +12,14 @@
     #define EXTERN
 #endif
 
+class DelKeyFilter: public QObject {
+    Q_OBJECT
+    public:
+        bool eventFilter(QObject *obj, QEvent *event);
+    signals:
+        void del(QList<int> const &);
+};
+
 class Mw: public QMainWindow {
     Q_OBJECT
     public:
@@ -21,11 +29,14 @@ class Mw: public QMainWindow {
         QSystemTrayIcon* trayIcon;
         QMenu* trayMenu;
         Ui::goPage ui;
+        DelKeyFilter delKeyFilter;
     public slots:
         void appendBook(Rmp const & rmp);
+        void delRows(QList<int> const &);
         void importDict();
         void importRmp();
     private slots:
+        void removeSelected();
         void toggle();
         void trayActive(QSystemTrayIcon::ActivationReason);
         void quit();
