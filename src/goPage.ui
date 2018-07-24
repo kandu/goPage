@@ -58,12 +58,13 @@
     <addaction name="actionTray"/>
     <addaction name="actionQuit"/>
    </widget>
-   <widget class="QMenu" name="menuImport">
+   <widget class="QMenu" name="menuEdit">
     <property name="title">
-     <string>&amp;Import</string>
+     <string>&amp;Edit</string>
     </property>
-    <addaction name="actionDict"/>
-    <addaction name="actionRmp"/>
+    <addaction name="actionImportDict"/>
+    <addaction name="actionImportRmp"/>
+    <addaction name="actionRemoveSelected"/>
    </widget>
    <widget class="QMenu" name="menuMigrate">
     <property name="title">
@@ -78,7 +79,7 @@
     </property>
    </widget>
    <addaction name="menuMinimize_to_tray"/>
-   <addaction name="menuImport"/>
+   <addaction name="menuEdit"/>
    <addaction name="menuMigrate"/>
    <addaction name="menuAbout"/>
   </widget>
@@ -93,14 +94,14 @@
     <string>&amp;Tray</string>
    </property>
   </action>
-  <action name="actionDict">
+  <action name="actionImportDict">
    <property name="text">
-    <string>&amp;Dict</string>
+    <string>Import &amp;Dict</string>
    </property>
   </action>
-  <action name="actionRmp">
+  <action name="actionImportRmp">
    <property name="text">
-    <string>&amp;Rmp</string>
+    <string>Import &amp;Rmp</string>
    </property>
   </action>
   <action name="actionFrom">
@@ -111,6 +112,11 @@
   <action name="action_All">
    <property name="text">
     <string>&amp;All</string>
+   </property>
+  </action>
+  <action name="actionRemoveSelected">
+   <property name="text">
+    <string>Remove &amp;Selected</string>
    </property>
   </action>
  </widget>
