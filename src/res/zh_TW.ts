@@ -41,21 +41,26 @@
     </message>
     <message>
         <location filename="../mw.cpp" line="221"/>
-        <location filename="../mw.cpp" line="255"/>
+        <location filename="../mw.cpp" line="269"/>
         <source>pdf files (*.pdf)</source>
         <translation>pdf 檔案 (*.pdf)</translation>
     </message>
     <message>
         <location filename="../mw.cpp" line="222"/>
-        <location filename="../mw.cpp" line="256"/>
+        <location filename="../mw.cpp" line="270"/>
         <source>djvu files (*.djvu *.djv)</source>
         <translation>djvu 檔案 (*.djvu *.djv)</translation>
     </message>
     <message>
         <location filename="../mw.cpp" line="223"/>
-        <location filename="../mw.cpp" line="257"/>
+        <location filename="../mw.cpp" line="271"/>
         <source>Any files (*)</source>
         <translation>所有檔案 (*)</translation>
+    </message>
+    <message>
+        <location filename="../mw.cpp" line="238"/>
+        <source>rmp files (*.rmp)</source>
+        <translation>rmp 檔案 (*.rmp)</translation>
     </message>
 </context>
 <context>

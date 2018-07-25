@@ -73,6 +73,19 @@ void Manager::addDict(QString const & path) {
     }
 }
 
+void Manager::addRmp(QString const & path) {
+    QFileInfo fi(path);
+    auto name= fi.baseName();
+    if (fi.exists() && !rmps.contains(name)) {
+        Rmp rmp(name);
+        if (rmp.load(fi.absoluteDir()) == Rmp::ok) {
+            rmp.save(rmpDir);
+            rmps.insert(name, rmp);
+            emit(rmpLoaded(rmp));
+        }
+    }
+}
+
 void Manager::updateOffset(QString const & book, int offset) {
     auto i= rmps.find(book);
     if (i != rmps.end()) {
