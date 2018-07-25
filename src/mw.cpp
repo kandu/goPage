@@ -233,7 +233,18 @@ void Mw::importDict() {
 }
 
 void Mw::importRmp() {
-    qDebug() << "importRmp";
+    QFileDialog fd(this);
+    fd.setFileMode(QFileDialog::ExistingFiles);
+    fd.setNameFilter(QObject::tr("rmp files (*.rmp)"));
+
+    if (fd.exec()) {
+        QStringList fileNames= fd.selectedFiles();
+        QListIterator<QString> i(fileNames);
+        while (i.hasNext()) {
+            auto path= i.next();
+            manager->addRmp(path);
+        }
+    }
 }
 
 void Mw::pathChanged(QTableWidgetItem* item) {

@@ -29,6 +29,7 @@ class Manager: public QObject {
         QDir rmpDir;
     public slots:
         void addDict(QString const & path);
+        void addRmp(QString const & path);
         void updateOffset(QString const & book, int offset);
         void updatePath(QString const & book, QString const & path);
         void update(QString const & book, int offset, QString const & path);
