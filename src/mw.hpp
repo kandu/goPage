@@ -3,6 +3,7 @@
 
 #include "config.h"
 #include <QMainWindow>
+#include <QSpinBox>
 #include <QSystemTrayIcon>
 #include "manager.hpp"
 #include "ui_goPage.h"
@@ -20,6 +21,18 @@ class DelKeyFilter: public QObject {
         void del(QList<int> const &);
 };
 
+class BookOffset: public QSpinBox {
+    Q_OBJECT
+    public:
+        BookOffset(QString const & book, QWidget* parent= 0);
+    signals:
+        void offsetChanged(QString const & book, int i);
+    private slots:
+        void changed(int i);
+    private:
+        QString book;
+};
+
 class Mw: public QMainWindow {
     Q_OBJECT
     public:
@@ -30,11 +43,14 @@ class Mw: public QMainWindow {
         QMenu* trayMenu;
         Ui::goPage ui;
         DelKeyFilter delKeyFilter;
+        QMap<QString, QTableWidgetItem*> items;
     public slots:
         void appendBook(Rmp const & rmp);
         void delRows(QList<int> const &);
         void importDict();
         void importRmp();
+        void pathChanged(QTableWidgetItem*);
+        void offsetChanged(QString const & book, int offset);
     private slots:
         void removeSelected();
         void toggle();

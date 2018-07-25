@@ -2,6 +2,7 @@
 
 #include <QMenu>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QSpinBox>
 #include <QKeyEvent>
 #include <QDebug>
@@ -35,6 +36,21 @@ bool DelKeyFilter::eventFilter(QObject *obj, QEvent *event) {
     } else {
         return QObject::eventFilter(obj, event);
     }
+}
+
+
+BookOffset::BookOffset(QString const & book, QWidget* parent)
+    : QSpinBox(parent), book(book)
+{
+    connect(
+        this,
+        SIGNAL(valueChanged(int)),
+        this,
+        SLOT(changed(int)));
+}
+
+void BookOffset::changed(int i) {
+    emit offsetChanged(book, i);
 }
 
 
@@ -135,6 +151,13 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
         );
     manager->loadRmps();
 
+    // connect after all rmps are loaded
+    connect(
+        ui.tableWidget,
+        SIGNAL(itemChanged(QTableWidgetItem*)),
+        this,
+        SLOT(pathChanged(QTableWidgetItem*)));
+
     ui.tableWidget->installEventFilter(&delKeyFilter);
 }
 
@@ -143,14 +166,15 @@ void Mw::appendBook(Rmp const & rmp) {
     int row= qmlTable->rowCount();
     qmlTable->insertRow(row);
 
-    QSpinBox* offsetBox= new QSpinBox(qmlTable);
+    BookOffset* offsetBox= new BookOffset(rmp.getName(), qmlTable);
     offsetBox->setRange(
         std::numeric_limits<int>::min(),
         std::numeric_limits<int>::max());
     offsetBox->setValue(rmp.getOffset());
     qmlTable->setCellWidget(row, 1, offsetBox);
 
-    auto nameItem= new QTableWidgetItem(rmp.getName());
+    auto name= rmp.getName();
+    auto nameItem= new QTableWidgetItem(name);
     nameItem->setFlags(nameItem->flags() ^ Qt::ItemIsEditable);
     auto offsetItem= new QTableWidgetItem(rmp.getOffset());
     auto pathItem= new QTableWidgetItem(rmp.getPath());
@@ -158,6 +182,14 @@ void Mw::appendBook(Rmp const & rmp) {
     qmlTable->setItem(row, 0, nameItem);
     qmlTable->setItem(row, 1, offsetItem);
     qmlTable->setItem(row, 2, pathItem);
+
+    items.insert(name, nameItem);
+
+    connect(
+        offsetBox,
+        SIGNAL(offsetChanged(QString const &, int)),
+        this,
+        SLOT(offsetChanged(QString const &, int)));
 }
 
 void Mw::delRows(QList<int> const & _rows) {
@@ -169,7 +201,9 @@ void Mw::delRows(QList<int> const & _rows) {
     i.toBack();
     while(i.hasPrevious()) {
         int row= i.previous();
-        manager->remove(ui.tableWidget->item(row, 0)->text());
+        auto book= ui.tableWidget->item(row, 0)->text();
+        manager->remove(book);
+        items.remove(book);
         ui.tableWidget->removeRow(row);
     }
 }
@@ -182,15 +216,29 @@ void Mw::importDict() {
         << QObject::tr("djvu files (*.djvu *.djv)")
         << QObject::tr("Any files (*)"));
 
-    QStringList fileNames;
     if (fd.exec()) {
-        fileNames = fd.selectedFiles();
-        qDebug() << fileNames;
+        QStringList fileNames= fd.selectedFiles();
+        QListIterator<QString> i(fileNames);
+        while (i.hasNext()) {
+            QFileInfo fi(i.next());
+            QString baseName= fi.baseName();
+        }
     }
 }
 
 void Mw::importRmp() {
     qDebug() << "importRmp";
+}
+
+void Mw::pathChanged(QTableWidgetItem* item) {
+    int row= item->row();
+    QString book= ui.tableWidget->item(row, 0)->text();
+    QString path= ui.tableWidget->item(row, 2)->text();
+    manager->updatePath(book, path);
+}
+
+void Mw::offsetChanged(QString const & book, int offset) {
+    manager->updateOffset(book, offset);
 }
 
 void Mw::removeSelected() {

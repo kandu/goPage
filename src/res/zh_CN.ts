@@ -30,27 +30,27 @@
         <translation type="obsolete">.rmp 格式错误。</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="12"/>
+        <location filename="../mw.cpp" line="45"/>
         <source>toggle</source>
         <translation>切换显隐</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="15"/>
+        <location filename="../mw.cpp" line="48"/>
         <source>quit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="119"/>
+        <location filename="../mw.cpp" line="182"/>
         <source>pdf files (*.pdf)</source>
         <translation>pdf 文件 (*.pdf)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="120"/>
+        <location filename="../mw.cpp" line="183"/>
         <source>djvu files (*.djvu *.djv)</source>
         <translation>djvu 文件 (*.djvu *.djv)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="121"/>
+        <location filename="../mw.cpp" line="184"/>
         <source>Any files (*)</source>
         <translation>所有文件 (*)</translation>
     </message>
