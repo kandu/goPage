@@ -28,6 +28,9 @@ class Manager: public QObject {
         QMap<QString, Rmp> rmps;
         QDir rmpDir;
     public slots:
+        void updateOffset(QString const & book, int offset);
+        void updatePath(QString const & book, QString const & path);
+        void update(QString const & book, int offset, QString const & path);
         void remove(QString const & book);
         void query(QString const & book, int page);
 };

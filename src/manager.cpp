@@ -61,6 +61,37 @@ void Manager::query(QString const & book, int page) {
     }
 }
 
+void Manager::updateOffset(QString const & book, int offset) {
+    auto i= rmps.find(book);
+    if (i != rmps.end()) {
+        auto rmp= i.value();
+        rmp.setOffset(offset);
+        rmp.save(rmpDir);
+        rmps.insert(book, rmp);
+    }
+}
+
+void Manager::updatePath(QString const & book, QString const & path) {
+    auto i= rmps.find(book);
+    if (i != rmps.end()) {
+        auto rmp= i.value();
+        rmp.setPath(path);
+        rmp.save(rmpDir);
+        rmps.insert(book, rmp);
+    }
+}
+
+void Manager::update(QString const & book, int offset, QString const & path) {
+    auto i= rmps.find(book);
+    if (i != rmps.end()) {
+        auto rmp= i.value();
+        rmp.setOffset(offset);
+        rmp.setPath(path);
+        rmp.save(rmpDir);
+        rmps.insert(book, rmp);
+    }
+}
+
 void Manager::remove(QString const & book) {
     auto rmp_i= rmps.find(book);
     if (rmp_i != rmps.end()) {
