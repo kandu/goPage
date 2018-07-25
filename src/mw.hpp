@@ -52,6 +52,7 @@ class Mw: public QMainWindow {
         void pathChanged(QTableWidgetItem*);
         void offsetChanged(QString const & book, int offset);
     private slots:
+        void cellClicked(int row, int column);
         void removeSelected();
         void toggle();
         void trayActive(QSystemTrayIcon::ActivationReason);

@@ -61,6 +61,18 @@ void Manager::query(QString const & book, int page) {
     }
 }
 
+void Manager::addDict(QString const & path) {
+    QFileInfo fi(path);
+    auto name= fi.baseName();
+    if (fi.exists() && !rmps.contains(name)) {
+        Rmp rmp(name);
+        rmp.setPath(path);
+        rmp.save(rmpDir);
+        rmps.insert(name, rmp);
+        emit(rmpLoaded(rmp));
+    }
+}
+
 void Manager::updateOffset(QString const & book, int offset) {
     auto i= rmps.find(book);
     if (i != rmps.end()) {

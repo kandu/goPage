@@ -135,6 +135,12 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
         this,
         SLOT(delRows(QList<int> const &)));
 
+    connect(
+        ui.tableWidget,
+        SIGNAL(cellClicked(int, int)),
+        this,
+        SLOT(cellClicked(int, int)));
+
     trayIcon= new QSystemTrayIcon(this);
     trayMenu= new QMenu(this);
     setupTray(this, trayMenu, trayIcon);
@@ -220,8 +226,8 @@ void Mw::importDict() {
         QStringList fileNames= fd.selectedFiles();
         QListIterator<QString> i(fileNames);
         while (i.hasNext()) {
-            QFileInfo fi(i.next());
-            QString baseName= fi.baseName();
+            auto path= i.next();
+            manager->addDict(path);
         }
     }
 }
@@ -232,13 +238,35 @@ void Mw::importRmp() {
 
 void Mw::pathChanged(QTableWidgetItem* item) {
     int row= item->row();
-    QString book= ui.tableWidget->item(row, 0)->text();
-    QString path= ui.tableWidget->item(row, 2)->text();
-    manager->updatePath(book, path);
+    int column= item->column();
+    if (column == 2) {
+        QString book= ui.tableWidget->item(row, 0)->text();
+        QString path= ui.tableWidget->item(row, 2)->text();
+        manager->updatePath(book, path);
+    }
 }
 
 void Mw::offsetChanged(QString const & book, int offset) {
     manager->updateOffset(book, offset);
+}
+
+void Mw::cellClicked(int row, int column) {
+    if (column == 2) {
+        QFileDialog fd(this);
+        fd.setFileMode(QFileDialog::ExistingFile);
+        fd.setNameFilters(QStringList()
+            << QObject::tr("pdf files (*.pdf)")
+            << QObject::tr("djvu files (*.djvu *.djv)")
+            << QObject::tr("Any files (*)"));
+
+        if (fd.exec()) {
+            auto fileNames= fd.selectedFiles();
+            auto newPath= fileNames[0];
+            auto book= ui.tableWidget->item(row, 0)->text();
+            ui.tableWidget->item(row, column)->setText(newPath);
+            manager->updatePath(book, newPath);
+        }
+    }
 }
 
 void Mw::removeSelected() {
