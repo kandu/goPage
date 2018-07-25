@@ -80,6 +80,7 @@ bool Rmp::save(QDir const & rmpDir) {
         rmpFile << cfg;
         rmpFile.flush();
         rmp.close();
+        setState(ok);
         return true;
     } else {
         return false;
