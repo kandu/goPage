@@ -30,37 +30,89 @@
         <translation type="obsolete">.rmp 格式错误。</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="60"/>
+        <location filename="../mw.cpp" line="62"/>
         <source>toggle</source>
         <translation>切换显隐</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="63"/>
+        <location filename="../mw.cpp" line="65"/>
         <source>quit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="221"/>
-        <location filename="../mw.cpp" line="269"/>
+        <location filename="../mw.cpp" line="234"/>
+        <location filename="../mw.cpp" line="282"/>
         <source>pdf files (*.pdf)</source>
         <translation>pdf 文件 (*.pdf)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="222"/>
-        <location filename="../mw.cpp" line="270"/>
+        <location filename="../mw.cpp" line="235"/>
+        <location filename="../mw.cpp" line="283"/>
         <source>djvu files (*.djvu *.djv)</source>
         <translation>djvu 文件 (*.djvu *.djv)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="223"/>
-        <location filename="../mw.cpp" line="271"/>
+        <location filename="../mw.cpp" line="236"/>
+        <location filename="../mw.cpp" line="284"/>
         <source>Any files (*)</source>
         <translation>所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="238"/>
+        <location filename="../mw.cpp" line="251"/>
         <source>rmp files (*.rmp)</source>
         <translation>rmp 文件 (*.rmp)</translation>
+    </message>
+</context>
+<context>
+    <name>dlgMigAll</name>
+    <message>
+        <location filename="../migrateAll.ui" line="20"/>
+        <source>Migrate All</source>
+        <translation>迁移所有</translation>
+    </message>
+    <message>
+        <location filename="../migrateAll.ui" line="28"/>
+        <source>Target Dir:</source>
+        <translation>目标目录：</translation>
+    </message>
+    <message>
+        <location filename="../migrateAll.ui" line="38"/>
+        <source>...</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../migrateAll.ui" line="62"/>
+        <source>move dictionaries</source>
+        <translation>移动字典文件</translation>
+    </message>
+</context>
+<context>
+    <name>dlgMigFrom</name>
+    <message>
+        <location filename="../migrateFrom.ui" line="20"/>
+        <source>Migrate</source>
+        <translation>迁移</translation>
+    </message>
+    <message>
+        <location filename="../migrateFrom.ui" line="31"/>
+        <source>From:</source>
+        <translation>源目录：</translation>
+    </message>
+    <message>
+        <location filename="../migrateFrom.ui" line="41"/>
+        <location filename="../migrateFrom.ui" line="62"/>
+        <source>...</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../migrateFrom.ui" line="52"/>
+        <source>To:</source>
+        <translation>目标目录：</translation>
+    </message>
+    <message>
+        <location filename="../migrateFrom.ui" line="86"/>
+        <source>move dictionaries</source>
+        <translation>移动字典文件</translation>
     </message>
 </context>
 <context>

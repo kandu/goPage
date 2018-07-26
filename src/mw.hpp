@@ -57,6 +57,8 @@ class Mw: public QMainWindow {
         void toggle();
         void trayActive(QSystemTrayIcon::ActivationReason);
         void quit();
+        void migFrom();
+        void migAll();
 };
 
 #undef EXTERN

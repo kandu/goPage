@@ -7,6 +7,8 @@
 #include <QKeyEvent>
 #include <QDebug>
 #include <limits>
+#include "dlgMigFrom.hpp"
+#include "dlgMigAll.hpp"
 #include "mw.hpp"
 
 bool DelKeyFilter::eventFilter(QObject *obj, QEvent *event) {
@@ -128,6 +130,17 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
         this,
         SLOT(removeSelected()));
 
+    connect(
+        ui.actionMigFrom,
+        SIGNAL(triggered(bool)),
+        this,
+        SLOT(migFrom()));
+
+    connect(
+        ui.actionMigAll,
+        SIGNAL(triggered(bool)),
+        this,
+        SLOT(migAll()));
 
     connect(
         &delKeyFilter,
@@ -311,5 +324,18 @@ void Mw::toggle() {
 
 void Mw::quit() {
     QApplication::quit();
+}
+
+void Mw::migFrom() {
+    qDebug() << "migFrom";
+}
+
+void Mw::migAll() {
+    DlgMigAll dlgMigAll(this);
+    if (dlgMigAll.exec()) {
+        auto path= dlgMigAll.getDir();
+        QDir dir(path);
+        bool isMoveFile= dlgMigAll.isMoveFile();
+    }
 }
 

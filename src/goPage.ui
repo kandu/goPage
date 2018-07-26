@@ -70,8 +70,8 @@
     <property name="title">
      <string>&amp;Migrate</string>
     </property>
-    <addaction name="actionFrom"/>
-    <addaction name="action_All"/>
+    <addaction name="actionMigFrom"/>
+    <addaction name="actionMigAll"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -104,12 +104,12 @@
     <string>Import &amp;Rmp</string>
    </property>
   </action>
-  <action name="actionFrom">
+  <action name="actionMigFrom">
    <property name="text">
     <string>&amp;From</string>
    </property>
   </action>
-  <action name="action_All">
+  <action name="actionMigAll">
    <property name="text">
     <string>&amp;All</string>
    </property>
