@@ -104,12 +104,9 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
     Ui::dlgAbout dlgAboutUi;
     dlgAbout= new QDialog(this, Qt::WindowCloseButtonHint);
     dlgAboutUi.setupUi(dlgAbout);
-    connect(
-        ui.menuAbout,
-        SIGNAL(aboutToShow()),
-        dlgAbout,
-        SLOT(exec()));
 
+    QAction *aboutAction = ui.menubar->addAction(tr("&About"));
+    connect(aboutAction, SIGNAL(triggered()), dlgAbout, SLOT(exec()));
 
     connect(
         ui.actionTray,
@@ -374,8 +371,5 @@ void Mw::migAll() {
             manager->moveAll(dir, isMoveFile);
         }
     }
-}
-void Mw::about() {
-    dlgAbout->exec();
 }
 
