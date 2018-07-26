@@ -170,6 +170,13 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
         );
     manager->loadRmps();
 
+    QObject::connect(
+        manager,
+        SIGNAL(rmpUpdated(Rmp const &)),
+        this,
+        SLOT(refreshBook(Rmp const &))
+        );
+
     // connect after all rmps are loaded
     connect(
         ui.tableWidget,
@@ -209,6 +216,12 @@ void Mw::appendBook(Rmp const & rmp) {
         SIGNAL(offsetChanged(QString const &, int)),
         this,
         SLOT(offsetChanged(QString const &, int)));
+}
+
+void Mw::refreshBook(Rmp const & rmp) {
+    auto item= items[rmp.getName()];
+    int row= item->row();
+    ui.tableWidget->item(row, 2)->setText(rmp.getPath());
 }
 
 void Mw::delRows(QList<int> const & _rows) {

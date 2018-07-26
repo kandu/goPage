@@ -64,12 +64,20 @@ void Manager::query(QString const & book, int page) {
 void Manager::addDict(QString const & path) {
     QFileInfo fi(path);
     auto name= fi.baseName();
-    if (fi.exists() && !rmps.contains(name)) {
-        Rmp rmp(name);
-        rmp.setPath(path);
-        rmp.save(rmpDir);
-        rmps.insert(name, rmp);
-        emit(rmpLoaded(rmp));
+    if (fi.exists()) {
+        if (rmps.contains(name)) {
+            auto rmp= rmps.find(name).value();
+            rmp.setPath(path);
+            rmp.save(rmpDir);
+            rmps.insert(name, rmp);
+            emit(rmpUpdated(rmp));
+        } else {
+            Rmp rmp(name);
+            rmp.setPath(path);
+            rmp.save(rmpDir);
+            rmps.insert(name, rmp);
+            emit(rmpLoaded(rmp));
+        }
     }
 }
 
