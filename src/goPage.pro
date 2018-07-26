@@ -31,7 +31,7 @@ FORMS += goPage.ui migrateFrom.ui migrateAll.ui
 RESOURCES += res/goPage.qrc
 
 HEADERS += config.h mw.hpp monitor.hpp rmp.hpp invoker.hpp manager.hpp dlgMigFrom.hpp dlgMigAll.hpp
-SOURCES += goPage.cpp mw.cpp monitor.cpp rmp.cpp invoker.cpp manager.cpp dlgMigFrom.cpp dlgMigAll.cpp
+SOURCES += init.cpp goPage.cpp mw.cpp monitor.cpp rmp.cpp invoker.cpp manager.cpp dlgMigFrom.cpp dlgMigAll.cpp
 
 #Temp Dir
 OBJECTS_DIR = build/obj
