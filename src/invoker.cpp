@@ -13,7 +13,7 @@ QRegExp cfgFmt("^ *([^ ]*) *, *([^/]*)");
 Invoker::Invoker(QObject* parent)
     : QObject(parent)
 {
-    QFile readerCfgFile(QDir::homePath() + USERCONFDIR + "/reader.cfg");
+    QFile readerCfgFile(QDir::homePath() + "/" + USERCONFDIR + "/" READERCFG);
     if (readerCfgFile.open(QIODevice::ReadOnly)) {
         QTextStream cfg(&readerCfgFile);
         while (!cfg.atEnd()) {

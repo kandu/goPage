@@ -9,7 +9,11 @@
 #define STRINGIFY(x) #x
 #define TOSTRING(x) STRINGIFY(x)
 
-#define USERCONFDIR "/.config/goPage"
+#define USERCONFDIR ".config/goPage"
+#define READERCFG "reader.cfg"
+
+#define SYS_READERCFG (SYSCONFDIR "/" "goPage/" READERCFG)
+#define USER_READERCFG (USERCONFDIR "/" READERCFG)
 
 #endif // _CONFIG_H
 

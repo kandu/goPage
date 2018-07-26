@@ -10,7 +10,7 @@
 
 Manager::Manager(QObject* parent)
     : QObject(parent)
-    , rmpDir(QDir::homePath() + USERCONFDIR + "/rmp")
+    , rmpDir(QDir::homePath() + "/" + USERCONFDIR + "/rmp")
 {
     monitor= new Monitor(QApplication::clipboard(), this);
     connect(
