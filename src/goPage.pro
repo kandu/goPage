@@ -47,7 +47,7 @@ etc.path= $$sprintf("%1/goPage", $$SYSCONFDIR)
 etc.files += reader.cfg
 
 bin.path= $$sprintf("%1/bin", $$PREFIX)
-bin.files += $$TARGET
+bin.files += $$sprintf("%1/%2", $$DESTDIR, $$TARGET)
 
 
 INSTALLS += bin etc
