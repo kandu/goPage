@@ -35,6 +35,8 @@
 
 goPage 現在生活在系統托盤裏了，你可以點擊小圖標隱藏或顯示主介面。
 
+![goPageIcon](https://bytebucket.org/zandoye/gopage/raw/2313f662d0f811e17fb62c985e51766a597f0dba/src/res/goPage.png)
+
 ## 編輯
 
 1. 導入字典。在對話框中選擇字典文件後, goPage 爲此字典文件生成 rmp 條目與文件. goPage 並不管理字典文件。因此原字典文件仍需保留。
