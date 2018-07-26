@@ -23,6 +23,7 @@ class Manager: public QObject {
         QMap<QString, Rmp> const & getRmps();
     signals:
         void rmpLoaded(Rmp const &);
+        void rmpUpdated(Rmp const &);
     private:
         Monitor* monitor;
         QMap<QString, Rmp> rmps;

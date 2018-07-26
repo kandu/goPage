@@ -46,6 +46,7 @@ class Mw: public QMainWindow {
         QMap<QString, QTableWidgetItem*> items;
     public slots:
         void appendBook(Rmp const & rmp);
+        void refreshBook(Rmp const & rmp);
         void delRows(QList<int> const &);
         void importDict();
         void importRmp();
