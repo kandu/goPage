@@ -27,7 +27,7 @@ DEFINES += SYSCONFDIR=\\\"$${SYSCONFDIR}\\\"
 
 # Input
 
-FORMS += goPage.ui migrateFrom.ui migrateAll.ui
+FORMS += goPage.ui migrateFrom.ui migrateAll.ui about.ui
 RESOURCES += res/goPage.qrc
 
 HEADERS += config.h mw.hpp monitor.hpp rmp.hpp invoker.hpp manager.hpp dlgMigFrom.hpp dlgMigAll.hpp

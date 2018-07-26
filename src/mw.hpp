@@ -44,6 +44,7 @@ class Mw: public QMainWindow {
         Ui::goPage ui;
         DelKeyFilter delKeyFilter;
         QMap<QString, QTableWidgetItem*> items;
+        QDialog* dlgAbout;
     public slots:
         void appendBook(Rmp const & rmp);
         void refreshBook(Rmp const & rmp);
@@ -60,6 +61,7 @@ class Mw: public QMainWindow {
         void quit();
         void migFrom();
         void migAll();
+        void about();
 };
 
 #undef EXTERN
