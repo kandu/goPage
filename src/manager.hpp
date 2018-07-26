@@ -35,6 +35,8 @@ class Manager: public QObject {
         void updatePath(QString const & book, QString const & path);
         void update(QString const & book, int offset, QString const & path);
         void remove(QString const & book);
+        void moveFrom(QDir const & fromDir, QDir const & toDir, bool move);
+        void moveAll(QDir const & dir, bool move);
         void query(QString const & book, int page);
 };
 

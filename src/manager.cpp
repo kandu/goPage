@@ -133,3 +133,50 @@ void Manager::remove(QString const & book) {
         QFile(rmpDir.filePath(book + ".rmp")).remove();
     }
 }
+
+void Manager::moveFrom(QDir const & fromDir, QDir const & toDir, bool move) {
+    QMapIterator<QString, Rmp> i(rmps);
+    while (i.hasNext()) {
+        i.next();
+        auto book= i.key();
+        auto rmp= i.value();
+
+        QFile dict(rmp.getPath());
+        QFileInfo dictInfo(dict);
+        if (dictInfo.dir() == fromDir) {
+            auto newPath= toDir.absoluteFilePath(dictInfo.fileName());
+
+            if (move) {
+                dict.rename(newPath);
+            }
+
+            rmp.setPath(newPath);
+            rmp.save(rmpDir);
+            rmps.insert(book, rmp);
+            emit(rmpUpdated(rmp));
+        }
+    }
+}
+
+void Manager::moveAll(QDir const & dir, bool move) {
+    QMapIterator<QString, Rmp> i(rmps);
+    while (i.hasNext()) {
+        i.next();
+        auto book= i.key();
+        auto rmp= i.value();
+
+        QFile dict(rmp.getPath());
+        QFileInfo dictInfo(dict);
+        auto newPath= dir.absoluteFilePath(dictInfo.fileName());
+
+        if (move) {
+            dict.rename(newPath);
+        }
+
+        rmp.setPath(newPath);
+        rmp.save(rmpDir);
+        rmps.insert(book, rmp);
+        emit(rmpUpdated(rmp));
+    }
+}
+

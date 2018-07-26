@@ -340,15 +340,28 @@ void Mw::quit() {
 }
 
 void Mw::migFrom() {
-    qDebug() << "migFrom";
+    DlgMigFrom dlgMigFrom(this);
+    if (dlgMigFrom.exec()) {
+        auto fromPath= dlgMigFrom.getFromDir();
+        auto toPath= dlgMigFrom.getToDir();
+        if (!fromPath.isEmpty() && !toPath.isEmpty()) {
+            QDir fromDir(fromPath);
+            QDir toDir(toPath);
+            bool isMoveFile= dlgMigFrom.isMoveFile();
+            manager->moveFrom(fromDir, toDir, isMoveFile);
+        }
+    }
 }
 
 void Mw::migAll() {
     DlgMigAll dlgMigAll(this);
     if (dlgMigAll.exec()) {
         auto path= dlgMigAll.getDir();
-        QDir dir(path);
-        bool isMoveFile= dlgMigAll.isMoveFile();
+        if (!path.isEmpty()) {
+            QDir dir(path);
+            bool isMoveFile= dlgMigAll.isMoveFile();
+            manager->moveAll(dir, isMoveFile);
+        }
     }
 }
 
