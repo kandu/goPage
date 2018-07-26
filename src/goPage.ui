@@ -73,15 +73,9 @@
     <addaction name="actionMigFrom"/>
     <addaction name="actionMigAll"/>
    </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>&amp;About</string>
-    </property>
-   </widget>
    <addaction name="menuMinimize_to_tray"/>
    <addaction name="menuEdit"/>
    <addaction name="menuMigrate"/>
-   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionQuit">

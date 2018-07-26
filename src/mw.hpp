@@ -61,7 +61,6 @@ class Mw: public QMainWindow {
         void quit();
         void migFrom();
         void migAll();
-        void about();
 };
 
 #undef EXTERN

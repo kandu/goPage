@@ -2,6 +2,18 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="zh_CN" sourcelanguage="en_GB">
 <context>
+    <name>Mw</name>
+    <message>
+        <source>About</source>
+        <translation type="obsolete">关于</translation>
+    </message>
+    <message>
+        <location filename="../mw.cpp" line="108"/>
+        <source>&amp;About</source>
+        <translation>(&amp;A)关于</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <location filename="../invoker.cpp" line="33"/>
@@ -40,25 +52,25 @@
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="258"/>
-        <location filename="../mw.cpp" line="306"/>
+        <location filename="../mw.cpp" line="255"/>
+        <location filename="../mw.cpp" line="303"/>
         <source>pdf files (*.pdf)</source>
         <translation>pdf 文件 (*.pdf)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="259"/>
-        <location filename="../mw.cpp" line="307"/>
+        <location filename="../mw.cpp" line="256"/>
+        <location filename="../mw.cpp" line="304"/>
         <source>djvu files (*.djvu *.djv)</source>
         <translation>djvu 文件 (*.djvu *.djv)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="260"/>
-        <location filename="../mw.cpp" line="308"/>
+        <location filename="../mw.cpp" line="257"/>
+        <location filename="../mw.cpp" line="305"/>
         <source>Any files (*)</source>
         <translation>所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="275"/>
+        <location filename="../mw.cpp" line="272"/>
         <source>rmp files (*.rmp)</source>
         <translation>rmp 文件 (*.rmp)</translation>
     </message>
@@ -166,17 +178,17 @@
         <translation>(&amp;E)编辑</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="99"/>
+        <location filename="../goPage.ui" line="93"/>
         <source>Import &amp;Dict</source>
         <translation>(&amp;D)导入词典</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="104"/>
+        <location filename="../goPage.ui" line="98"/>
         <source>Import &amp;Rmp</source>
         <translation>(&amp;R)导入 Rmp</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="119"/>
+        <location filename="../goPage.ui" line="113"/>
         <source>Remove &amp;Selected</source>
         <translation>(&amp;S)删除所选</translation>
     </message>
@@ -190,17 +202,16 @@
         <translation>(&amp;M)迁移</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="78"/>
         <source>&amp;About</source>
-        <translation>(&amp;A)关于</translation>
+        <translation type="obsolete">(&amp;A)关于</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="89"/>
+        <location filename="../goPage.ui" line="83"/>
         <source>&amp;Quit</source>
         <translation>(&amp;Q)退出</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="94"/>
+        <location filename="../goPage.ui" line="88"/>
         <source>&amp;Tray</source>
         <translation>(&amp;T)最小化到托盘</translation>
     </message>
@@ -209,12 +220,12 @@
         <translation type="obsolete">(&amp;D)词典</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="109"/>
+        <location filename="../goPage.ui" line="103"/>
         <source>&amp;From</source>
         <translation>(&amp;F)来源</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="114"/>
+        <location filename="../goPage.ui" line="108"/>
         <source>&amp;All</source>
         <translation>(&amp;A)所有</translation>
     </message>
