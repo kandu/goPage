@@ -1,5 +1,7 @@
 # goPage
 
+![goPage](https://bytebucket.org/zandoye/static/raw/41e5ed66d725d8201b5751a32e3581aae094a392/goPage/goPage_20180727_010713.png)
+
 引得市，開卷助理 \*NIX 版。
 
 以下介紹，使用的術語採用大陸的習慣。
