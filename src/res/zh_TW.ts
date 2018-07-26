@@ -30,37 +30,55 @@
         <translation type="obsolete">.rmp 格式錯誤。</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="62"/>
+        <location filename="../mw.cpp" line="63"/>
         <source>toggle</source>
         <translation>切換顯隱</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="65"/>
+        <location filename="../mw.cpp" line="66"/>
         <source>quit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="247"/>
-        <location filename="../mw.cpp" line="295"/>
+        <location filename="../mw.cpp" line="258"/>
+        <location filename="../mw.cpp" line="306"/>
         <source>pdf files (*.pdf)</source>
         <translation>pdf 檔案 (*.pdf)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="248"/>
-        <location filename="../mw.cpp" line="296"/>
+        <location filename="../mw.cpp" line="259"/>
+        <location filename="../mw.cpp" line="307"/>
         <source>djvu files (*.djvu *.djv)</source>
         <translation>djvu 檔案 (*.djvu *.djv)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="249"/>
-        <location filename="../mw.cpp" line="297"/>
+        <location filename="../mw.cpp" line="260"/>
+        <location filename="../mw.cpp" line="308"/>
         <source>Any files (*)</source>
         <translation>所有檔案 (*)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="264"/>
+        <location filename="../mw.cpp" line="275"/>
         <source>rmp files (*.rmp)</source>
         <translation>rmp 檔案 (*.rmp)</translation>
+    </message>
+</context>
+<context>
+    <name>dlgAbout</name>
+    <message>
+        <location filename="../about.ui" line="20"/>
+        <source>About</source>
+        <translation>關於</translation>
+    </message>
+    <message utf8="true">
+        <location filename="../about.ui" line="26"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;http://www.mebag.com/index/&quot;&gt;&lt;span style=&quot; font-size:24pt; text-decoration: underline; color:#2980b9;&quot;&gt;引得市&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="39"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://bitbucket.org/zandoye/gopage&quot;&gt;&lt;span style=&quot; font-size:24pt; color:#2980b9;&quot;&gt;goPage&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
     </message>
 </context>
 <context>

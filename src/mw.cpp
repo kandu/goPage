@@ -10,6 +10,7 @@
 #include "dlgMigFrom.hpp"
 #include "dlgMigAll.hpp"
 #include "mw.hpp"
+#include "ui_about.h"
 
 bool DelKeyFilter::eventFilter(QObject *obj, QEvent *event) {
     if (event->type() == QEvent::KeyRelease) {
@@ -99,6 +100,16 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
     : QMainWindow(parent, flags)
 {
     ui.setupUi(this);
+
+    Ui::dlgAbout dlgAboutUi;
+    dlgAbout= new QDialog(this, Qt::WindowCloseButtonHint);
+    dlgAboutUi.setupUi(dlgAbout);
+    connect(
+        ui.menuAbout,
+        SIGNAL(aboutToShow()),
+        dlgAbout,
+        SLOT(exec()));
+
 
     connect(
         ui.actionTray,
@@ -363,5 +374,8 @@ void Mw::migAll() {
             manager->moveAll(dir, isMoveFile);
         }
     }
+}
+void Mw::about() {
+    dlgAbout->exec();
 }
 
