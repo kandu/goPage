@@ -17,7 +17,7 @@
 進入 goPage 的 src 目录後：
 
 ## 編譯
-    qmake
+    qmake-qt4
     make
 
 編譯設定於後文介紹。
@@ -71,12 +71,12 @@ goPage 根據 freedesktop 標準，通過 xdg 工具組自動判斷文件類型�
 安裝時可選定安裝目標目錄，由 PREFIX 變量設定。更可獨立設定配置文件目錄，由 SYSCONFDIR 變量設定。
 
 設定方式爲如下
-    qmake PREFIX=目標目錄 SYSCONFDIR=系統配置文件目錄
+    qmake-qt4 PREFIX=目標目錄 SYSCONFDIR=系統配置文件目錄
 
 若省略 SYSCONFDIR 設定，則其默認值爲 PREFIX/etc 目錄。若省略 PREFIX 設定，則其默認值爲 /usr/local 目錄。
 
 當爲發行版打包時，建議設定爲
-    qmake PREFIX=/usr SYSCONFDIR=/etc
+    qmake-qt4 PREFIX=/usr SYSCONFDIR=/etc
 
 ## 導入機制
 
