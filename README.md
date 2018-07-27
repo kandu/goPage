@@ -4,6 +4,8 @@
 
 引得市，開卷助理 \*NIX 版。
 
+[下載最新的 0.2.1 版](https://bitbucket.org/zandoye/gopage/get/0.2.1.tar.gz)
+
 以下介紹，使用的術語採用大陸的習慣。
 
 # goPage 原理介紹
@@ -96,6 +98,17 @@ goPage 根據 freedesktop 標準，通過 xdg 工具組自動判斷文件類型�
 2. 編輯->導入 rmp，選取所需 rmp 後導入。
 
 3. 編輯->導入字典，選取所需字典文件並導入, goPage 即正確更新相應 rmp 條目的字典目錄。
+
+# 釋出版本
+
+[0.2.1](https://bitbucket.org/zandoye/gopage/get/0.2.1.tar.gz)
+
+[0.2.0](https://bitbucket.org/zandoye/gopage/get/0.2.0.tar.gz)
+
+[0.1.1](https://bitbucket.org/zandoye/gopage/get/0.1.1.tar.gz)
+
+[0.1.0](https://bitbucket.org/zandoye/gopage/get/0.1.0.tar.gz)
+
 
 # 歡迎回覆
 
