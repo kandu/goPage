@@ -70,12 +70,17 @@ goPage 根據 freedesktop 標準，通過 xdg 工具組自動判斷文件類型�
 
 ## 安裝時的配置
 
+### 目錄設定
 安裝時可選定安裝目標目錄，由 PREFIX 變量設定。更可獨立設定配置文件目錄，由 SYSCONFDIR 變量設定。
 
 設定方式爲如下
     qmake-qt4 PREFIX=目標目錄 SYSCONFDIR=系統配置文件目錄
 
 若省略 SYSCONFDIR 設定，則其默認值爲 PREFIX/etc 目錄。若省略 PREFIX 設定，則其默認值爲 /usr/local 目錄。
+
+### 編譯工具設定
+
+由 LUPDATE 和 LRELEASE 參數可設定國際化和本地化 lupdate lrelease 工具。若編譯過程因未找到兩個工具而出錯時(例如 Fedora 發行版), 則可在執行 qmake 時加上 LUPDATE=lupdate-qt4 LRELEASE=lrelease-qt4 參數通過編譯。
 
 當爲發行版打包時，建議設定爲
     qmake-qt4 PREFIX=/usr SYSCONFDIR=/etc
