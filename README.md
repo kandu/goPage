@@ -65,6 +65,7 @@ goPage 現在生活在系統托盤裏了，你可以點擊小圖標隱藏或顯�
 goPage 根據 freedesktop 標準，通過 xdg 工具組自動判斷文件類型，尋找默認閱讀器。當前支持 Gnome 桌面下的默認閱讀器 evince, KDE 桌面下的默認閱讀器 okular, 以及 pdf 閱讀器 xpdf, djvu 閱讀器 djview. 用戶可根據需要自己在 ~/.config/goPage/reader.cfg 配置文件中添加自定義閱讀器。
 
 條目格式如下，其中程序參數中可用 %1 代表字典文件 %2 代表頁碼。
+
     閱讀器, 程序參數
 
 
