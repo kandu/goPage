@@ -12,22 +12,32 @@
 
 [开卷助理——古文字检索新思路](https://zhuanlan.zhihu.com/p/30943761)
 
-# 編譯及安裝
+# 安裝
+
+## 添加發行版源安裝或者下載發行版安裝包
+
+感謝 openSUSE 的 obs 服務！
+
+* [Debian, Ubuntu 使用者](https://software.opensuse.org/package/gopage)
+* [openSUSE, Fedora, CentOS, RHEL 使用者](https://software.opensuse.org/package/goPage)
+
+## 從源碼安裝，刪除
 
 依賴 qt4-sdk 
 
 進入 goPage 的 src 目录後：
 
-## 編譯
+
+### 編譯
     qmake-qt4
     make
 
 編譯設定於後文介紹。
 
-## 安裝
+### 安裝
     make install
 
-## 刪除
+### 刪除
     make uninstall
 
 
