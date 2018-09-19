@@ -5,6 +5,7 @@ syntax: glob
 **/Session.vim
 **/.*.swp
 **/*.qm
+**/.qmake.stash
 
 src/build
 

@@ -3,6 +3,9 @@ TARGET = goPage
 DEPENDPATH += .
 INCLUDEPATH += .
 
+QT += core gui widgets
+CONFIG += c++11
+
 DESTDIR= build
 
 isEmpty(LUPDATE) {
@@ -12,8 +15,6 @@ isEmpty(LRELEASE) {
     LRELEASE= lrelease
 }
 system($$LUPDATE goPage.pro && $$LRELEASE goPage.pro)
-
-QMAKE_CXXFLAGS += -std=c++11
 
 isEmpty(PREFIX) {
     PREFIX= "/usr/local"

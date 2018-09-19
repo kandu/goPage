@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="zh_CN" sourcelanguage="en_GB">
+<TS version="2.1" language="zh_CN" sourcelanguage="en_GB">
 <context>
     <name>Mw</name>
     <message>
@@ -82,7 +82,7 @@
         <source>About</source>
         <translation>关于</translation>
     </message>
-    <message utf8="true">
+    <message>
         <location filename="../about.ui" line="26"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;http://www.mebag.com/index/&quot;&gt;&lt;span style=&quot; font-size:24pt; text-decoration: underline; color:#2980b9;&quot;&gt;引得市&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>

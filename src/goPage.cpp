@@ -9,7 +9,6 @@
 int main(int argc, char *argv[])
 {
     init();
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
     QApplication app(argc, argv);
 
     QTranslator qtTranslator;
