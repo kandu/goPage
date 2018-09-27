@@ -170,7 +170,7 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
     header->setStretchLastSection(true);
 
     manager= new Manager(this);
-    QObject::connect(
+    connect(
         manager,
         SIGNAL(rmpLoaded(Rmp const &)),
         this,
@@ -178,7 +178,7 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
         );
     manager->loadRmps();
 
-    QObject::connect(
+    connect(
         manager,
         SIGNAL(rmpUpdated(Rmp const &)),
         this,
