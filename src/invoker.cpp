@@ -7,6 +7,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include "invoker.hpp"
+#include "tray.hpp"
 
 QRegExp cfgFmt("^ *([^ ]*) *, *([^/]*)");
 
@@ -28,6 +29,23 @@ Invoker::Invoker(QObject* parent)
 }
 
 void Invoker::open(QString path, QString page) {
+#ifdef Q_OS_MACOS
+    QProcess::execute("open -a Preview " + path);
+
+    QString cmd=
+        "tell application \"Preview\" to activate\n"
+        "tell application \"System Events\" to tell process \"Preview\" to click menu item \"Go to Page…\" of menu \"Go\" of menu bar 1\n"
+        "tell application \"System Events\" to keystroke \"" + page + "\"\n"
+        "tell application \"System Events\" to key code 36";
+
+    QProcess osa;
+    auto env= osa.processEnvironment();
+    env.insert("TERM_PROGRAM", "Apple_Terminal");
+    env.insert("TERM", "xterm-256color");
+    osa.setProcessEnvironment(env);
+    osa.start("/usr/bin/osascript", QStringList() << "-l" << "AppleScript" << "-e" << cmd);
+    osa.waitForFinished();
+#else
     QMessageBox mb_filetype(
         QMessageBox::Critical,
         QObject::tr("error"),
@@ -77,5 +95,6 @@ void Invoker::open(QString path, QString page) {
     } else {
         mb_filetype.exec();
     }
+#endif
 }
 

@@ -3,6 +3,7 @@
 
 #include "config.h"
 #include <QObject>
+#include <QTimer>
 #include <QClipboard>
 
 #ifdef _MONITOR
@@ -20,6 +21,13 @@ class Monitor: public QObject {
         void entry(QString book, int page);
     private:
         QClipboard* clipboard;
+// mac os
+    private:
+        QTimer timer;
+    private slots:
+        void check();
+    private:
+        QString latest;
 };
 
 #undef EXTERN

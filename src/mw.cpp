@@ -1,4 +1,5 @@
 #define _MW
+#define _TRAY
 
 #include <QMenu>
 #include <QFileDialog>
@@ -9,8 +10,13 @@
 #include <limits>
 #include "dlgMigFrom.hpp"
 #include "dlgMigAll.hpp"
+#include "tray.hpp"
 #include "mw.hpp"
 #include "ui_about.h"
+
+#ifdef Q_OS_MACOS
+    #include "noNap.h"
+#endif
 
 bool DelKeyFilter::eventFilter(QObject *obj, QEvent *event) {
     if (event->type() == QEvent::KeyRelease) {
@@ -193,6 +199,10 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
         SLOT(pathChanged(QTableWidgetItem*)));
 
     ui.tableWidget->installEventFilter(&delKeyFilter);
+
+#ifdef Q_OS_MACOS
+    noNap();
+#endif
 }
 
 void Mw::appendBook(Rmp const & rmp) {
@@ -330,6 +340,8 @@ void Mw::removeSelected() {
 }
 
 void Mw::trayActive(QSystemTrayIcon::ActivationReason reason) {
+#ifdef Q_OS_MAC
+#else
     switch (reason) {
         case QSystemTrayIcon::Trigger:
             toggle();
@@ -337,6 +349,7 @@ void Mw::trayActive(QSystemTrayIcon::ActivationReason reason) {
         default:
             toggle();
     }
+#endif
 }
 
 void Mw::toggle() {

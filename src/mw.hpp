@@ -39,7 +39,6 @@ class Mw: public QMainWindow {
         Mw(QWidget* parent = 0, Qt::WindowFlags flags = 0);
     private:
         Manager* manager;
-        QSystemTrayIcon* trayIcon;
         QMenu* trayMenu;
         Ui::goPage ui;
         DelKeyFilter delKeyFilter;

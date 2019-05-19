@@ -7,6 +7,7 @@
 #include <QTextCodec>
 #include <QDebug>
 #include "manager.hpp"
+#include "tray.hpp"
 
 Manager::Manager(QObject* parent)
     : QObject(parent)
@@ -53,11 +54,17 @@ void Manager::query(QString const & book, int page) {
         Invoker invoker(this);
         invoker.open(rmp.getPath(), QString::number(page + rmp.getOffset()));
     } else {
+#ifdef Q_OS_MACOS
+        trayIcon->showMessage(
+            tr("error"),
+            tr("dict doesn't exist: ") + rmp.getPath());
+#else
         QMessageBox(
             QMessageBox::Warning,
-            QObject::tr("error"),
-            QObject::tr("dict doesn't exist: ") + rmp.getPath()
+            tr("error"),
+            tr("dict doesn't exist: ") + rmp.getPath()
         ).exec();
+#endif
     }
 }
 
