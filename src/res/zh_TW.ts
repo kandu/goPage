@@ -8,7 +8,7 @@
         <translation type="obsolete">關於</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="108"/>
+        <location filename="../mw.cpp" line="114"/>
         <source>&amp;About</source>
         <translation>(&amp;A)關於</translation>
     </message>
@@ -16,24 +16,25 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../invoker.cpp" line="33"/>
-        <location filename="../invoker.cpp" line="46"/>
-        <location filename="../manager.cpp" line="58"/>
+        <location filename="../invoker.cpp" line="51"/>
+        <location filename="../invoker.cpp" line="64"/>
+        <location filename="../manager.cpp" line="64"/>
         <source>error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location filename="../invoker.cpp" line="34"/>
+        <location filename="../invoker.cpp" line="52"/>
         <source>unknown filetype!</source>
         <translation>未知檔案型態！</translation>
     </message>
     <message>
-        <location filename="../invoker.cpp" line="47"/>
+        <location filename="../invoker.cpp" line="65"/>
         <source>no default reader for filetype %1.</source>
         <translation>未找到檔案型態 %1 的預設閱讀器。</translation>
     </message>
     <message>
-        <location filename="../manager.cpp" line="59"/>
+        <location filename="../manager.cpp" line="60"/>
+        <location filename="../manager.cpp" line="65"/>
         <source>dict doesn&apos;t exist: </source>
         <translation>詞典不存在：</translation>
     </message>
@@ -42,35 +43,35 @@
         <translation type="obsolete">.rmp 格式錯誤。</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="63"/>
+        <location filename="../mw.cpp" line="69"/>
         <source>toggle</source>
         <translation>切換顯隱</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="66"/>
+        <location filename="../mw.cpp" line="72"/>
         <source>quit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="255"/>
-        <location filename="../mw.cpp" line="303"/>
+        <location filename="../mw.cpp" line="263"/>
+        <location filename="../mw.cpp" line="311"/>
         <source>pdf files (*.pdf)</source>
         <translation>pdf 檔案 (*.pdf)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="256"/>
-        <location filename="../mw.cpp" line="304"/>
+        <location filename="../mw.cpp" line="264"/>
+        <location filename="../mw.cpp" line="312"/>
         <source>djvu files (*.djvu *.djv)</source>
         <translation>djvu 檔案 (*.djvu *.djv)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="257"/>
-        <location filename="../mw.cpp" line="305"/>
+        <location filename="../mw.cpp" line="265"/>
+        <location filename="../mw.cpp" line="313"/>
         <source>Any files (*)</source>
         <translation>所有檔案 (*)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="272"/>
+        <location filename="../mw.cpp" line="280"/>
         <source>rmp files (*.rmp)</source>
         <translation>rmp 檔案 (*.rmp)</translation>
     </message>

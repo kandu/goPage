@@ -37,7 +37,7 @@ DEFINES += SYSCONFDIR=\\\"$${SYSCONFDIR}\\\"
 FORMS += goPage.ui migrateFrom.ui migrateAll.ui about.ui
 RESOURCES += res/goPage.qrc
 
-HEADERS += config.h mw.hpp monitor.hpp rmp.hpp invoker.hpp manager.hpp dlgMigFrom.hpp dlgMigAll.hpp
+HEADERS += config.h tray.hpp mw.hpp monitor.hpp rmp.hpp invoker.hpp manager.hpp dlgMigFrom.hpp dlgMigAll.hpp
 SOURCES += init.cpp goPage.cpp mw.cpp monitor.cpp rmp.cpp invoker.cpp manager.cpp dlgMigFrom.cpp dlgMigAll.cpp
 
 #Temp Dir
@@ -59,3 +59,8 @@ bin.files += $$sprintf("%1/%2", $$DESTDIR, $$TARGET)
 
 INSTALLS += bin etc
 
+macx {
+    HEADERS += noNap.h
+    OBJECTIVE_SOURCES += noNap.mm
+    LIBS += -framework Foundation
+}

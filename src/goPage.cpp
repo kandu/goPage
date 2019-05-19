@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
     Mw mw;
     mw.show();
 
+    app.setQuitOnLastWindowClosed(false);
     return app.exec();
 }
 
