@@ -48,6 +48,7 @@ RCC_DIR = build/rcc
 
 
 TRANSLATIONS += res/zh_CN.ts
+TRANSLATIONS += res/zh_HK.ts
 TRANSLATIONS += res/zh_TW.ts
 
 etc.path= $$sprintf("%1/goPage", $$SYSCONFDIR)

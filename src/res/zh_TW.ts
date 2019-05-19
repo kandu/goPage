@@ -2,6 +2,21 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_TW" sourcelanguage="en_GB">
 <context>
+    <name>Manager</name>
+    <message>
+        <location filename="../manager.cpp" line="59"/>
+        <location filename="../manager.cpp" line="64"/>
+        <source>error</source>
+        <translation>錯誤</translation>
+    </message>
+    <message>
+        <location filename="../manager.cpp" line="60"/>
+        <location filename="../manager.cpp" line="65"/>
+        <source>dict doesn&apos;t exist: </source>
+        <translation>詞典不存在：</translation>
+    </message>
+</context>
+<context>
     <name>Mw</name>
     <message>
         <source>About</source>
@@ -18,7 +33,6 @@
     <message>
         <location filename="../invoker.cpp" line="51"/>
         <location filename="../invoker.cpp" line="64"/>
-        <location filename="../manager.cpp" line="64"/>
         <source>error</source>
         <translation>錯誤</translation>
     </message>
@@ -33,10 +47,8 @@
         <translation>未找到檔案型態 %1 的預設閱讀器。</translation>
     </message>
     <message>
-        <location filename="../manager.cpp" line="60"/>
-        <location filename="../manager.cpp" line="65"/>
         <source>dict doesn&apos;t exist: </source>
-        <translation>詞典不存在：</translation>
+        <translation type="vanished">詞典不存在：</translation>
     </message>
     <message>
         <source>.rmp format error.</source>
@@ -53,25 +65,25 @@
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="263"/>
-        <location filename="../mw.cpp" line="311"/>
+        <location filename="../mw.cpp" line="265"/>
+        <location filename="../mw.cpp" line="313"/>
         <source>pdf files (*.pdf)</source>
         <translation>pdf 檔案 (*.pdf)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="264"/>
-        <location filename="../mw.cpp" line="312"/>
+        <location filename="../mw.cpp" line="266"/>
+        <location filename="../mw.cpp" line="314"/>
         <source>djvu files (*.djvu *.djv)</source>
         <translation>djvu 檔案 (*.djvu *.djv)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="265"/>
-        <location filename="../mw.cpp" line="313"/>
+        <location filename="../mw.cpp" line="267"/>
+        <location filename="../mw.cpp" line="315"/>
         <source>Any files (*)</source>
         <translation>所有檔案 (*)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="280"/>
+        <location filename="../mw.cpp" line="282"/>
         <source>rmp files (*.rmp)</source>
         <translation>rmp 檔案 (*.rmp)</translation>
     </message>
