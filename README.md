@@ -14,12 +14,23 @@
 
 # 安裝
 
-## 添加發行版源安裝或者下載發行版安裝包
+請依據自己的系統或者喜好在以下方式中任選其中安裝。
+
+## Linux 下添加發行版源安裝或者下載發行版安裝包
 
 感謝 openSUSE 的 obs 服務！
 
 * [Debian, Ubuntu 使用者](https://software.opensuse.org/package/gopage)
 * [openSUSE, Fedora, CentOS, RHEL 使用者](https://software.opensuse.org/package/goPage)
+
+## Mac OS X 版本
+
+下載 [goPage.dmg](http://machinelife.org/osc/goPage.dmg)
+
+安裝使用示例：
+
+1. [install](https://link.zhihu.com/?target=https%3A//bitbucket.org/zandoye/static/raw/tip/goPage/goPage_install.gif)
+2. [usage](https://link.zhihu.com/?target=https%3A//bitbucket.org/zandoye/static/raw/tip/goPage/goPage_jump.gif)
 
 ## 從源碼安裝，刪除
 
