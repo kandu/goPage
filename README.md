@@ -29,8 +29,8 @@
 
 安裝使用示例：
 
-1. [install](https://link.zhihu.com/?target=https%3A//bitbucket.org/zandoye/static/raw/tip/goPage/goPage_install.gif)
-2. [usage](https://link.zhihu.com/?target=https%3A//bitbucket.org/zandoye/static/raw/tip/goPage/goPage_jump.gif)
+1. [安裝](https://link.zhihu.com/?target=https%3A//bitbucket.org/zandoye/static/raw/tip/goPage/goPage_install.gif)
+2. [使用](https://link.zhihu.com/?target=https%3A//bitbucket.org/zandoye/static/raw/tip/goPage/goPage_jump.gif)
 
 ## 從源碼安裝，刪除
 
