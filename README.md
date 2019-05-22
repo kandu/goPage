@@ -34,6 +34,8 @@
 
 若發現 goPage 只能打開字典而不做跳轉。請至 Mac 的 System Preferences → Security & Privacy 中的 Privacy 分頁, Accessibility 項，將 goPage 打勾。先點擊頁面中的“鎖”才能打勾 , Click the lock to make changes. 以允許 goPage 的輔助按鍵功能。
 
+![Mac 系統設置](https://bytebucket.org/zandoye/static/raw/tip/goPage/goPage_mac_sysconfig.png)
+
 ## 從源碼安裝，刪除
 
 依賴 qt-sdk 
