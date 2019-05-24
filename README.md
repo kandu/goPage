@@ -27,7 +27,7 @@
 
 下載
 1. [goPage.dmg](http://machinelife.org/osc/goPage.dmg)
-2. [goPage.dmg](https://mega.nz/#!JUcEEQRR!G0e0xPFld8pFcThAsnYXW1tBUMCUOqcaTSBuZUimFAs)
+2. [goPage.dmg](https://mega.nz/#!xYFEUATT!IJiyXNnMpkpKmlgEZp0rMGO3I3tiUAbSrgh-M5VunvI)
 
 安裝使用示例：
 
