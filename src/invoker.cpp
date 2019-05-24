@@ -34,7 +34,8 @@ void Invoker::open(QString path, QString page) {
 
     QString cmd=
         "tell application \"Preview\" to activate\n"
-        "tell application \"System Events\" to tell process \"Preview\" to click menu item \"Go to Page…\" of menu \"Go\" of menu bar 1\n"
+        // "tell application \"System Events\" to tell process \"Preview\" to click menu item \"Go to Page…\" of menu \"Go\" of menu bar 1\n"
+        "tell application \"System Events\" to keystroke \"g\" using {option down, command down}\n"
         "tell application \"System Events\" to keystroke \"" + page + "\"\n"
         "tell application \"System Events\" to key code 36";
 
