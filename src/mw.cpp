@@ -240,6 +240,7 @@ void Mw::refreshBook(Rmp const & rmp) {
     auto item= items[rmp.getName()];
     int row= item->row();
     ui.tableWidget->item(row, 2)->setText(rmp.getPath());
+    ((BookOffset*)ui.tableWidget->cellWidget(row, 1))->setValue(rmp.getOffset());
 }
 
 void Mw::delRows(QList<int> const & _rows) {
@@ -286,7 +287,7 @@ void Mw::importRmp() {
         QListIterator<QString> i(fileNames);
         while (i.hasNext()) {
             auto path= i.next();
-            manager->addRmp(path);
+            manager->addRmp(path, ui.actionRmp_update_offset->isChecked());
         }
     }
 }

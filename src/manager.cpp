@@ -88,15 +88,25 @@ void Manager::addDict(QString const & path) {
     }
 }
 
-void Manager::addRmp(QString const & path) {
+void Manager::addRmp(QString const & path, bool updateOffset) {
     QFileInfo fi(path);
     auto name= fi.baseName();
-    if (fi.exists() && !rmps.contains(name)) {
+    if (fi.exists()) {
         Rmp rmp(name);
-        if (rmp.load(fi.absoluteDir()) == Rmp::ok) {
-            rmp.save(rmpDir);
-            rmps.insert(name, rmp);
-            emit(rmpLoaded(rmp));
+        if (!rmps.contains(name)) {
+            if (rmp.load(fi.absoluteDir()) == Rmp::ok) {
+                rmp.save(rmpDir);
+                rmps.insert(name, rmp);
+                emit(rmpLoaded(rmp));
+            }
+        } else if (updateOffset) {
+            if (rmp.load(fi.absoluteDir()) == Rmp::ok) {
+                auto rmp_orig= rmps.find(name).value();
+                int offset= rmp.getOffset();
+                rmp_orig.setOffset(offset);
+                this->updateOffset(name, offset);
+                emit(rmpUpdated(rmp_orig));
+            }
         }
     }
 }
