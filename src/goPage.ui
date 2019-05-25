@@ -48,7 +48,7 @@
      <x>0</x>
      <y>0</y>
      <width>600</width>
-     <height>35</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMinimize_to_tray">
@@ -65,6 +65,8 @@
     <addaction name="actionImportDict"/>
     <addaction name="actionImportRmp"/>
     <addaction name="actionRemoveSelected"/>
+    <addaction name="separator"/>
+    <addaction name="actionRmp_update_offset"/>
    </widget>
    <widget class="QMenu" name="menuMigrate">
     <property name="title">
@@ -111,6 +113,17 @@
   <action name="actionRemoveSelected">
    <property name="text">
     <string>Remove &amp;Selected</string>
+   </property>
+  </action>
+  <action name="actionRmp_update_offset">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Rmp: &amp;update offset</string>
    </property>
   </action>
  </widget>
