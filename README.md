@@ -24,8 +24,9 @@
 ## Mac OS X 版本
 
 下載
-1. [goPage.dmg](http://machinelife.org/osc/goPage.dmg)
-2. [goPage.dmg](https://mega.nz/#!xYFEUATT!IJiyXNnMpkpKmlgEZp0rMGO3I3tiUAbSrgh-M5VunvI)
+
+1. [goPage.0.4.dmg](http://machinelife.org/osc/goPage.0.4.dmg)(machinelife)
+2. [goPage.0.4.dmg](https://mega.nz/#!oVFzUKjK!Q-6VUJGw4bVBcDu68r-ps8PtpBpf4zWBMtCKFbw4Ncg)(mega)
 
 安裝使用示例：
 
