@@ -11,6 +11,12 @@
 
 QRegExp cfgFmt("^ *([^ ]*) *, *([^/]*)");
 
+QString escape(QString const path) {
+    auto path_e= path;
+    path_e.replace("\"", "\"\"\"");
+    return QString("\"%1\"").arg(path_e);
+}
+
 Invoker::Invoker(QObject* parent)
     : QObject(parent)
 {
@@ -30,7 +36,7 @@ Invoker::Invoker(QObject* parent)
 
 void Invoker::open(QString path, QString page) {
 #ifdef Q_OS_MACOS
-    QProcess::execute("open -a Preview " + path);
+    QProcess::execute("open", QStringList() << "-a" << "Preview" << path);
 
     QString cmd=
         "tell application \"Preview\" to activate\n"
@@ -88,7 +94,7 @@ void Invoker::open(QString path, QString page) {
             } else {
                 QProcess::startDetached(reader_app
                     + " "
-                    + reader_opt.arg(path).arg(page));
+                    + reader_opt.arg(escape(path)).arg(page));
             }
         } else {
             mb_reader.exec();
