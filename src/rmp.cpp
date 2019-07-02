@@ -60,7 +60,7 @@ Rmp::State Rmp::load(QDir const & rmpDir) {
         rmp.close();
         if (rmpFmt.exactMatch(cfg)) {
             offset= QString(rmpFmt.cap(1)).toInt();
-            path= rmpFmt.cap(3).replace('\\', '/');
+            path= rmpFmt.cap(3)/*.replace('\\', '/')*/;
             state= ok;
         }
         else {
