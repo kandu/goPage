@@ -25,13 +25,13 @@
 
 下載
 
-1. [goPage.0.4.dmg](http://machinelife.org/osc/goPage.0.4.dmg)(machinelife)
-2. [goPage.0.4.dmg](https://mega.nz/#!oVFzUKjK!Q-6VUJGw4bVBcDu68r-ps8PtpBpf4zWBMtCKFbw4Ncg)(mega)
+1. [goPage.0.4.1.dmg](http://machinelife.org/osc/goPage.0.4.1.dmg)(machinelife)
+2. [goPage.0.4.1.dmg](https://mega.nz/#!4RF31IoI!wP55Yy_wT7ULE8dsHSWbzDqP4j-lEUYuOcjU9T8uj7c)(mega)
 
 安裝使用示例：
 
-1. [安裝](https://link.zhihu.com/?target=https%3A//bitbucket.org/zandoye/static/raw/tip/goPage/goPage_install.gif)
-2. [使用](https://link.zhihu.com/?target=https%3A//bitbucket.org/zandoye/static/raw/tip/goPage/goPage_jump.gif)
+1. [安裝](https://bitbucket.org/zandoye/static/raw/tip/goPage/goPage_install.gif)
+2. [使用](https://bitbucket.org/zandoye/static/raw/tip/goPage/goPage_jump.gif)
 
 若發現 goPage 只能打開字典而不做跳轉。請至 Mac 的 System Preferences → Security & Privacy 中的 Privacy 分頁, Accessibility 項，將 goPage 打勾。先點擊頁面中的“鎖”才能打勾 , Click the lock to make changes. 以允許 goPage 的輔助按鍵功能。
 
@@ -133,19 +133,21 @@ goPage 根據 freedesktop 標準，通過 xdg 工具組自動判斷文件類型�
 
 # 釋出版本
 
-[0.4.0](https://bitbucket.org/zandoye/gopage/get/0.4.0.tar.gz)
+[0.4.1](https://github.com/kandu/goPage/archive/0.4.1.tar.gz)
 
-[0.3.0](https://bitbucket.org/zandoye/gopage/get/0.3.0.tar.gz)
+[0.4.0](https://github.com/kandu/goPage/archive/0.4.0.tar.gz)
 
-[0.2.2](https://bitbucket.org/zandoye/gopage/get/0.2.2.tar.gz)
+[0.3.0](https://github.com/kandu/goPage/archive/0.3.0.tar.gz)
 
-[0.2.1](https://bitbucket.org/zandoye/gopage/get/0.2.1.tar.gz)
+[0.2.2](https://github.com/kandu/goPage/archive/0.2.2.tar.gz)
 
-[0.2.0](https://bitbucket.org/zandoye/gopage/get/0.2.0.tar.gz)
+[0.2.1](https://github.com/kandu/goPage/archive/0.2.1.tar.gz)
 
-[0.1.1](https://bitbucket.org/zandoye/gopage/get/0.1.1.tar.gz)
+[0.2.0](https://github.com/kandu/goPage/archive/0.2.0.tar.gz)
 
-[0.1.0](https://bitbucket.org/zandoye/gopage/get/0.1.0.tar.gz)
+[0.1.1](https://github.com/kandu/goPage/archive/0.1.1.tar.gz)
+
+[0.1.0](https://github.com/kandu/goPage/archive/0.1.0.tar.gz)
 
 
 # 歡迎回覆
