@@ -63,7 +63,7 @@
 
 goPage 現在生活在系統托盤裏了，你可以點擊小圖標隱藏或顯示主介面。
 
-![goPageIcon](https://bytebucket.org/zandoye/gopage/raw/2313f662d0f811e17fb62c985e51766a597f0dba/src/res/goPage.png)
+![goPageIcon](https://raw.githubusercontent.com/kandu/goPage/master/src/res/goPage.png)
 
 ## 編輯
 
