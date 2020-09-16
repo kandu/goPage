@@ -1,6 +1,6 @@
 # goPage
 
-![goPage](https://bytebucket.org/zandoye/static/raw/41e5ed66d725d8201b5751a32e3581aae094a392/goPage/goPage_20180727_010713.png)
+![goPage](https://raw.githubusercontent.com/kandu/static/master/goPage/goPage_20180727_010713.png)
 
 引得市，開卷助理 \*NIX 版，支持 Linux, BSD, Mac OSX 系統。
 
@@ -30,12 +30,12 @@
 
 安裝使用示例：
 
-1. [安裝](https://bitbucket.org/zandoye/static/raw/tip/goPage/goPage_install.gif)
-2. [使用](https://bitbucket.org/zandoye/static/raw/tip/goPage/goPage_jump.gif)
+1. [安裝](https://raw.githubusercontent.com/kandu/static/master/goPage/goPage_install.gif)
+2. [使用](https://raw.githubusercontent.com/kandu/static/master/goPage/goPage_jump.gif)
 
 若發現 goPage 只能打開字典而不做跳轉。請至 Mac 的 System Preferences → Security & Privacy 中的 Privacy 分頁, Accessibility 項，將 goPage 打勾。先點擊頁面中的“鎖”才能打勾 , Click the lock to make changes. 以允許 goPage 的輔助按鍵功能。
 
-![Mac 系統設置](https://bytebucket.org/zandoye/static/raw/tip/goPage/goPage_mac_sysconfig.png)
+![Mac 系統設置](https://raw.githubusercontent.com/kandu/static/master/goPage/goPage_mac_sysconfig.png)
 
 ## 從源碼安裝，刪除
 
