@@ -25,7 +25,7 @@
 
 下載
 
-1. [goPage.0.4.1.dmg](http://machinelife.org/osc/goPage.0.4.1.dmg)(machinelife)
+1. [goPage.0.4.1.dmg](https://ml.smaji.org/osc/goPage.0.4.1.dmg)(smaji)
 2. [goPage.0.4.1.dmg](https://mega.nz/#!4RF31IoI!wP55Yy_wT7ULE8dsHSWbzDqP4j-lEUYuOcjU9T8uj7c)(mega)
 
 安裝使用示例：
