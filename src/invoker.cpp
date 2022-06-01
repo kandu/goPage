@@ -82,7 +82,7 @@ void Invoker::open(QString path, QString page) {
             QMapIterator<QString, QString> i(readerCfg);
             while (i.hasNext() && !found) {
                 i.next();
-                if (QRegExp(i.key()).indexIn(defaultApp) != -1) {
+                if (QRegExp(i.key(), Qt::CaseInsensitive).indexIn(defaultApp) != -1) {
                     reader_app= i.key();
                     reader_opt= i.value();
                     found= true;
