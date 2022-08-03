@@ -1,0 +1,6 @@
+/src/Makefile
+/src/.cache
+/src/.qmake.stash
+/src/compile_commands.json
+build/
+**/res/*.qm
