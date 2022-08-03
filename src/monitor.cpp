@@ -51,6 +51,9 @@ void Monitor::monitor(void)
 void Monitor::check(void)
 {
     QString text= clipboard->text();
+    if (ignoreDanglingEbf) {
+        text= text.trimmed();
+    }
 
     if (text != latest) {
         latest= text;
