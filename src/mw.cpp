@@ -246,7 +246,7 @@ void Mw::refreshBook(Rmp const & rmp) {
 void Mw::delRows(QList<int> const & _rows) {
     // delete from bottom to top
     auto rows= _rows;
-    qSort(rows.begin(), rows.end());
+    std::sort(rows.begin(), rows.end());
 
     QListIterator<int> i(rows);
     i.toBack();

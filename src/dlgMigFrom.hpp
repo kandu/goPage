@@ -13,7 +13,7 @@
 class DlgMigFrom: public QDialog {
     Q_OBJECT
     public:
-        DlgMigFrom(QWidget* parent = 0, Qt::WindowFlags flags = 0);
+        DlgMigFrom(QWidget* parent = 0, Qt::WindowFlags flags = Qt::WindowFlags());
         QString getFromDir();
         QString getToDir();
         bool isMoveFile();

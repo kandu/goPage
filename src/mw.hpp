@@ -36,7 +36,7 @@ class BookOffset: public QSpinBox {
 class Mw: public QMainWindow {
     Q_OBJECT
     public:
-        Mw(QWidget* parent = 0, Qt::WindowFlags flags = 0);
+        Mw(QWidget* parent = 0, Qt::WindowFlags flags = Qt::WindowFlags());
     private:
         Manager* manager;
         QMenu* trayMenu;

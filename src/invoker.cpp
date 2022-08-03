@@ -11,12 +11,6 @@
 
 QRegExp cfgFmt("^ *([^ ]*) *, *([^/]*)");
 
-QString escape(QString const path) {
-    auto path_e= path;
-    path_e.replace("\"", "\"\"\"");
-    return QString("\"%1\"").arg(path_e);
-}
-
 Invoker::Invoker(QObject* parent)
     : QObject(parent)
 {
@@ -25,7 +19,9 @@ Invoker::Invoker(QObject* parent)
         QTextStream cfg(&readerCfgFile);
         while (!cfg.atEnd()) {
             if (cfgFmt.exactMatch(cfg.readLine())) {
-                readerCfg.insert(cfgFmt.cap(1), cfgFmt.cap(2));
+                readerCfg.insert(
+                    cfgFmt.cap(1).trimmed(),
+                    cfgFmt.cap(2).trimmed());
             }
         }
         readerCfgFile.close();
@@ -71,7 +67,9 @@ void Invoker::open(QString path, QString page) {
             QObject::tr("error"),
             QString(QObject::tr("no default reader for filetype %1.")).arg(filetype));
 
-        xdg_mime.start(QString("xdg-mime query default %1").arg(filetype));
+        xdg_mime.start(
+            QString("xdg-mime"),
+            QStringList() << "query" << "default" << filetype);
         if (xdg_mime.waitForFinished()) {
 
             QString defaultApp= QTextStream(xdg_mime.readAllStandardOutput()).readLine();
@@ -92,9 +90,12 @@ void Invoker::open(QString path, QString page) {
             if (!found) {
                 mb_reader.exec();
             } else {
-                QProcess::startDetached(reader_app
-                    + " "
-                    + reader_opt.arg(escape(path)).arg(page));
+                auto opts= reader_opt.split(QRegExp("\\s+"));
+                opts.replaceInStrings("%1", path);
+                opts.replaceInStrings("%2", page);
+                QProcess::startDetached(
+                    reader_app,
+                    opts);
             }
         } else {
             mb_reader.exec();
