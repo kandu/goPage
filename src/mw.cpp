@@ -191,6 +191,13 @@ Mw::Mw(QWidget* parent, Qt::WindowFlags flags)
         SLOT(refreshBook(Rmp const &))
         );
 
+    connect(
+        ui.actionIgnore_dangling_ebf,
+        &QAction::toggled,
+        manager,
+        &Manager::setIgnoreDanglingEbf);
+    manager->setIgnoreDanglingEbf(ui.actionIgnore_dangling_ebf->isChecked());
+
     // connect after all rmps are loaded
     connect(
         ui.tableWidget,

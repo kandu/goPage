@@ -39,6 +39,9 @@ Monitor::Monitor(QClipboard* clipboard, QObject* parent)
 void Monitor::monitor(void)
 {
     QString text= clipboard->text();
+    if (ignoreDanglingEbf) {
+        text= text.trimmed();
+    }
     if (ebf.exactMatch(text)) {
         emit entry(ebf.cap(5), ebf.cap(1).toInt() + ebf.cap(2).toInt());
     }
@@ -57,3 +60,8 @@ void Monitor::check(void)
     }
     return;
 }
+
+void Monitor::setIgnoreDanglingEbf(bool ignore) {
+    this->ignoreDanglingEbf= ignore;
+}
+

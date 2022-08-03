@@ -31,18 +31,18 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../invoker.cpp" line="52"/>
-        <location filename="../invoker.cpp" line="65"/>
+        <location filename="../invoker.cpp" line="54"/>
+        <location filename="../invoker.cpp" line="67"/>
         <source>error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../invoker.cpp" line="53"/>
+        <location filename="../invoker.cpp" line="55"/>
         <source>unknown filetype!</source>
         <translation>未知文件类型！</translation>
     </message>
     <message>
-        <location filename="../invoker.cpp" line="66"/>
+        <location filename="../invoker.cpp" line="68"/>
         <source>no default reader for filetype %1.</source>
         <translation>未找到文件类型 %1 的默认阅读器。</translation>
     </message>
@@ -191,31 +191,40 @@
         <translation>(&amp;E)编辑</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="95"/>
+        <location filename="../goPage.ui" line="96"/>
         <source>Import &amp;Dict</source>
         <translation>(&amp;D)导入词典</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="100"/>
+        <location filename="../goPage.ui" line="101"/>
         <source>Import &amp;Rmp</source>
         <translation>(&amp;R)导入 Rmp</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="115"/>
+        <location filename="../goPage.ui" line="116"/>
         <source>Remove &amp;Selected</source>
         <translation>(&amp;S)删除所选</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="126"/>
+        <location filename="../goPage.ui" line="127"/>
+        <source>&amp;Update rmp offset</source>
+        <translation>(&amp;U) 导入 rmp 时更新偏移量</translation>
+    </message>
+    <message>
+        <location filename="../goPage.ui" line="138"/>
+        <source>&amp;Ignore dangling ebf</source>
+        <translation>(&amp;I) 忽略 ebf 悬置行</translation>
+    </message>
+    <message>
         <source>Rmp: &amp;update offset</source>
-        <translation>(&amp;U) RMP: 重复导入时更新偏移量</translation>
+        <translation type="vanished">(&amp;U) RMP: 重复导入时更新偏移量</translation>
     </message>
     <message>
         <source>&amp;Import</source>
         <translation type="obsolete">(&amp;I)导入</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="73"/>
+        <location filename="../goPage.ui" line="74"/>
         <source>&amp;Migrate</source>
         <translation>(&amp;M)迁移</translation>
     </message>
@@ -224,12 +233,12 @@
         <translation type="obsolete">(&amp;A)关于</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="85"/>
+        <location filename="../goPage.ui" line="86"/>
         <source>&amp;Quit</source>
         <translation>(&amp;Q)退出</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="90"/>
+        <location filename="../goPage.ui" line="91"/>
         <source>&amp;Tray</source>
         <translation>(&amp;T)最小化到托盘</translation>
     </message>
@@ -238,12 +247,12 @@
         <translation type="obsolete">(&amp;D)词典</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="105"/>
+        <location filename="../goPage.ui" line="106"/>
         <source>&amp;From</source>
         <translation>(&amp;F)来源</translation>
     </message>
     <message>
-        <location filename="../goPage.ui" line="110"/>
+        <location filename="../goPage.ui" line="111"/>
         <source>&amp;All</source>
         <translation>(&amp;A)所有</translation>
     </message>

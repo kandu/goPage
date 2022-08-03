@@ -197,3 +197,7 @@ void Manager::moveAll(QDir const & dir, bool move) {
     }
 }
 
+void Manager::setIgnoreDanglingEbf(bool ignore) {
+    monitor->setIgnoreDanglingEbf(ignore);
+}
+

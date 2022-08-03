@@ -17,6 +17,7 @@ class Monitor: public QObject {
         Monitor(QClipboard* clipboard, QObject* parent= 0);
     public slots:
         void monitor(void);
+        void setIgnoreDanglingEbf(bool ignore);
     signals:
         void entry(QString book, int page);
     private:
@@ -28,6 +29,7 @@ class Monitor: public QObject {
         void check();
     private:
         QString latest;
+        bool ignoreDanglingEbf;
 };
 
 #undef EXTERN

@@ -67,6 +67,7 @@
     <addaction name="actionRemoveSelected"/>
     <addaction name="separator"/>
     <addaction name="actionRmp_update_offset"/>
+    <addaction name="actionIgnore_dangling_ebf"/>
    </widget>
    <widget class="QMenu" name="menuMigrate">
     <property name="title">
@@ -123,7 +124,18 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Rmp: &amp;update offset</string>
+    <string>&amp;Update rmp offset</string>
+   </property>
+  </action>
+  <action name="actionIgnore_dangling_ebf">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Ignore dangling ebf</string>
    </property>
   </action>
  </widget>

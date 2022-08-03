@@ -38,6 +38,7 @@ class Manager: public QObject {
         void moveFrom(QDir const & fromDir, QDir const & toDir, bool move);
         void moveAll(QDir const & dir, bool move);
         void query(QString const & book, int page);
+        void setIgnoreDanglingEbf(bool ignore);
 };
 
 #undef EXTERN
