@@ -65,25 +65,25 @@
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="266"/>
-        <location filename="../mw.cpp" line="314"/>
+        <location filename="../mw.cpp" line="273"/>
+        <location filename="../mw.cpp" line="321"/>
         <source>pdf files (*.pdf)</source>
         <translation>pdf 檔案 (*.pdf)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="267"/>
-        <location filename="../mw.cpp" line="315"/>
+        <location filename="../mw.cpp" line="274"/>
+        <location filename="../mw.cpp" line="322"/>
         <source>djvu files (*.djvu *.djv)</source>
         <translation>djvu 檔案 (*.djvu *.djv)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="268"/>
-        <location filename="../mw.cpp" line="316"/>
+        <location filename="../mw.cpp" line="275"/>
+        <location filename="../mw.cpp" line="323"/>
         <source>Any files (*)</source>
         <translation>所有檔案 (*)</translation>
     </message>
     <message>
-        <location filename="../mw.cpp" line="283"/>
+        <location filename="../mw.cpp" line="290"/>
         <source>rmp files (*.rmp)</source>
         <translation>rmp 檔案 (*.rmp)</translation>
     </message>
