@@ -1,0 +1,19 @@
+#
+# This file is part of the goPage project.
+#
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Icon=goPage
+Type=Application
+Categories=Office;
+TryExec=goPage
+Exec=goPage %U
+MimeType=application/pdf;
+Name=goPage
+GenericName=goPage
+GenericName[zh_CN]=开卷助理
+GenericName[zh_HK]=開卷助理
+GenericName[zh_TW]=開卷助理
+Keywords=goPage;开卷助理;開卷助理;ebf;rmp;

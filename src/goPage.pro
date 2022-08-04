@@ -58,6 +58,11 @@ bin.path= $$sprintf("%1/bin", $$PREFIX)
 bin.files += $$sprintf("%1/%2", $$DESTDIR, $$TARGET)
 
 
+xdg_icon.path= $$sprintf("%1/share/icons/hicolor/256x256/apps", $$PREFIX)
+xdg_icon.files += res/goPage.png
+xdg_desktop.path = $$sprintf("%1/share/applications", $$PREFIX)
+xdg_desktop.files += res/goPage.desktop
+
 INSTALLS += bin etc
 
 macx {
@@ -65,3 +70,8 @@ macx {
     OBJECTIVE_SOURCES += noNap.mm
     LIBS += -framework Foundation
 }
+
+!win32&!macx {
+    INSTALLS += xdg_icon xdg_desktop
+}
+
