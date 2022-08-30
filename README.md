@@ -25,8 +25,10 @@
 
 下載
 
-1. [goPage.0.4.1.dmg](https://ml.smaji.org/osc/goPage.0.4.1.dmg)(smaji)
-2. [goPage.0.4.1.dmg](https://mega.nz/#!4RF31IoI!wP55Yy_wT7ULE8dsHSWbzDqP4j-lEUYuOcjU9T8uj7c)(mega)
+1. [goPage.0.5.0.dmg](https://ml.smaji.org/osc/goPage.0.5.0.dmg)(smaji)
+2. [goPage.0.5.0.dmg](https://mega.nz/file/tFkhhaCS#Y33NruUt7xM44_jtQu4VEb4UPSDd3iqMoPgLeBcAgoE)(mega)
+3. [goPage.0.4.1.dmg](https://ml.smaji.org/osc/goPage.0.4.1.dmg)(smaji)
+4. [goPage.0.4.1.dmg](https://mega.nz/#!4RF31IoI!wP55Yy_wT7ULE8dsHSWbzDqP4j-lEUYuOcjU9T8uj7c)(mega)
 
 安裝使用示例：
 
@@ -76,6 +78,12 @@ goPage 現在生活在系統托盤裏了，你可以點擊小圖標隱藏或顯�
 以上導入操作，刪除所選操作均可多選，批量進行操作。
 
 在主介面中，可進行 rmp 偏移設定以及字典文件路徑設定。
+
+### 框選項
+
+1. 更新 rmp 偏移。默認啓用以便導入 rmp 文件時同時更新已有偏移量。
+
+2. 忽略懸置的 ebf 行。幾乎所有電子表單數據，電子試算表軟件都會對條目內容前置或後置或前後置空行，此選項默認啓用以便日常使用。若需精確 ebf 匹配則可關閉此選項。
 
 ## 遷移
 
@@ -132,6 +140,8 @@ goPage 根據 freedesktop 標準，通過 xdg 工具組自動判斷文件類型�
 3. 編輯->導入字典，選取所需字典文件並導入, goPage 即正確更新相應 rmp 條目的字典目錄。
 
 # 釋出版本
+
+[0.5.0](https://github.com/kandu/goPage/archive/0.5.0.tar.gz)
 
 [0.4.1](https://github.com/kandu/goPage/archive/0.4.1.tar.gz)
 
