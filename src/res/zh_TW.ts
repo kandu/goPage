@@ -31,18 +31,18 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../invoker.cpp" line="54"/>
-        <location filename="../invoker.cpp" line="67"/>
+        <location filename="../invoker.cpp" line="65"/>
+        <location filename="../invoker.cpp" line="78"/>
         <source>error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location filename="../invoker.cpp" line="55"/>
+        <location filename="../invoker.cpp" line="66"/>
         <source>unknown filetype!</source>
         <translation>未知檔案型態！</translation>
     </message>
     <message>
-        <location filename="../invoker.cpp" line="68"/>
+        <location filename="../invoker.cpp" line="79"/>
         <source>no default reader for filetype %1.</source>
         <translation>未找到檔案型態 %1 的預設閱讀器。</translation>
     </message>

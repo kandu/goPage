@@ -32,22 +32,14 @@ Invoker::Invoker(QObject* parent)
 
 void Invoker::open(QString path, QString page) {
 #ifdef Q_OS_MACOS
-    QProcess::execute("open", QStringList() << "-a" << "Preview" << path);
-
-    QString cmd=
-        "tell application \"Preview\" to activate\n"
-        // "tell application \"System Events\" to tell process \"Preview\" to click menu item \"Go to Page…\" of menu \"Go\" of menu bar 1\n"
-        "tell application \"System Events\" to keystroke \"g\" using {option down, command down}\n"
-        "tell application \"System Events\" to keystroke \"" + page + "\"\n"
-        "tell application \"System Events\" to key code 36";
-
-    QProcess osa;
-    auto env= osa.processEnvironment();
-    env.insert("TERM_PROGRAM", "Apple_Terminal");
-    env.insert("TERM", "xterm-256color");
-    osa.setProcessEnvironment(env);
-    osa.start("/usr/bin/osascript", QStringList() << "-l" << "AppleScript" << "-e" << cmd);
-    osa.waitForFinished();
+    auto param= QString{"file://%1#page=%2"}.arg(path).arg(page);
+    auto fx= new QProcess();
+    fx->connect(
+        fx,
+        qOverload<int, QProcess::ExitStatus>(&QProcess::finished),
+        [fx]() { fx->deleteLater(); }
+        );
+    fx->start("/Applications/Firefox.app/Contents/MacOS/firefox", QStringList{} << param);
 #else
     QMessageBox mb_filetype(
         QMessageBox::Critical,
